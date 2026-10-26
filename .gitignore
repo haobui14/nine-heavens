@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.openai/sites-state/
+*.tar.gz
+*.log
+android/.gradle/
+android/**/build/
+android/local.properties
+android/app/src/main/assets/public/
+ios/App/Pods/
+ios/App/App/public/
+ios/App/build/
+.DS_Store

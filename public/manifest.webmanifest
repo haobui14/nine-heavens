@@ -1,0 +1,7 @@
+{
+  "id": "./", "name": "Nine Heavens — A Cultivator's Journey", "short_name": "Nine Heavens",
+  "description": "An offline cultivation RPG. Find your Dao, brave the wilds, and ascend.",
+  "start_url": "./", "scope": "./", "display": "standalone", "orientation": "any",
+  "background_color": "#f4f1e9", "theme_color": "#f4f1e9",
+  "icons": [{ "src": "./icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}
