@@ -14,6 +14,7 @@ import { advance, act, qiCap, qiRate, power, attack, health, weaponCost, abodeCo
 import { loadGame, saveGame, exportSave, importSave } from './game/save';
 import { mountScene } from './scene-rpg';
 import { chime } from './audio';
+import { exportJourney } from './save-export';
 
 type Page = 'sanctuary' | 'world' | 'techniques' | 'inventory' | 'abode' | 'alchemy' | 'sect';
 let state: GameState;
@@ -22,7 +23,7 @@ let inventoryFilter = 'all';
 let catalogFilters = emptyCatalogFilters();
 let disposeScene: (() => void) | undefined;
 let saveStatus = 'Saving your journey';
-let offlineReady = false;
+let offlineReady = Capacitor.isNativePlatform();
 let lastBattleTick = 0;
 let lastSave = 0;
 let toastTimer: ReturnType<typeof setTimeout>;
@@ -163,12 +164,24 @@ function showOffline(report: OfflineReport) {
   d.querySelector('#continue-journey')!.addEventListener('click', () => d.close());
 }
 function openSettings() {
+  const native = Capacitor.isNativePlatform();
   const d = modal('A little peace of mind', `<p class="dialog-intro">Your journey belongs to you. Keep a copy somewhere safe.</p><div class="settings-row"><span>${icon('volume-2')}<span><strong>Gentle sound effects</strong><small>Plucked notes for actions and breakthroughs</small></span></span><button class="switch ${state.settings.sound ? 'on' : ''}" role="switch" aria-label="Sound effects" aria-checked="${state.settings.sound}" data-pref="sound"><span></span></button></div><div class="settings-row"><span>${icon('wind')}<span><strong>Reduced motion</strong><small>Still the particles and soften transitions</small></span></span><button class="switch ${state.settings.reducedMotion ? 'on' : ''}" role="switch" aria-label="Reduced motion" aria-checked="${state.settings.reducedMotion}" data-pref="reducedMotion"><span></span></button></div><div class="save-tools"><button class="button secondary" id="export-save">${icon('download')} Export save</button><button class="button secondary" id="import-save">${icon('upload')} Import save</button></div><input id="save-file" type="file" accept=".json,application/json" hidden><button class="text-button" id="protect-save">${icon('shield-check')} Request persistent browser storage</button><p class="dialog-footnote">Browser saves are local to this browser and address. Clearing site data can remove them. Export to transfer your journey between PC and mobile.</p><div class="about-build"><strong>NINE HEAVENS</strong><span>v0.3 · Relics of the Dao</span><p>Built for single-player, offline cultivation. This chapter includes three realms, three regions, six arts, alchemy, a spirit companion, and Azure Cloud membership.</p></div>`);
   d.querySelectorAll<HTMLButtonElement>('[data-pref]').forEach(button => button.onclick = () => {
     const key = button.dataset.pref as 'sound' | 'reducedMotion'; dispatch({ type: 'setting', key, value: !state.settings[key] }, true); button.classList.toggle('on', state.settings[key]); button.setAttribute('aria-checked', String(state.settings[key]));
   });
-  d.querySelector('#export-save')!.addEventListener('click', () => {
-    advance(state, Date.now()); const a = document.createElement('a'); const url = URL.createObjectURL(new Blob([exportSave(state)], { type: 'application/json' })); a.href = url; a.download = `nine-heavens-${new Date().toISOString().slice(0, 10)}.json`; a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000); toast('A copy of your journey has been exported.');
+  if (native) {
+    d.querySelector('#protect-save')?.remove();
+    d.querySelector('.dialog-footnote')!.textContent = 'Your journey is saved in this app on this device. Export a backup before uninstalling, or to transfer between PC and mobile. Export opens Android’s share dialog.';
+  }
+  d.querySelector('#export-save')!.addEventListener('click', async event => {
+    const button = event.currentTarget as HTMLButtonElement;
+    button.disabled = true;
+    try {
+      advance(state, Date.now());
+      const exported = await exportJourney(exportSave(state), `nine-heavens-${new Date().toISOString().slice(0, 10)}.json`);
+      if (exported) toast(native ? 'Save export finished.' : 'A copy of your journey has been exported.');
+    } catch { toast('Your save could not be exported. Your local journey is safe; please try again.', true); }
+    finally { button.disabled = false; }
   });
   const input = d.querySelector<HTMLInputElement>('#save-file')!;
   d.querySelector('#import-save')!.addEventListener('click', () => input.click());
@@ -181,7 +194,7 @@ function openSettings() {
       preview.querySelector('#confirm-import')!.addEventListener('click', async () => { state = imported; const report = advance(state, Date.now()); await persist(); preview.close(); page = 'sanctuary'; render(); toast('Your journey has been restored.'); showOffline(report); });
     } catch (error) { toast(error instanceof Error ? error.message : 'This save could not be read.', true); }
   };
-  d.querySelector('#protect-save')!.addEventListener('click', async () => { const granted = await navigator.storage?.persist?.().catch(() => false); toast(granted ? 'The browser has granted persistent storage.' : 'The browser did not grant persistent storage. Keep an exported backup.'); });
+  d.querySelector('#protect-save')?.addEventListener('click', async () => { const granted = await navigator.storage?.persist?.().catch(() => false); toast(granted ? 'The browser has granted persistent storage.' : 'The browser did not grant persistent storage. Keep an exported backup.'); });
 }
 function openModal(name: string) {
   if (name === 'settings') return openSettings();

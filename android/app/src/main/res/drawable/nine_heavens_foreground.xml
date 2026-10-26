@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Native vector version of public/icon.svg, with adaptive-icon safe margins. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="192" android:viewportHeight="192">
+    <group android:pivotX="96" android:pivotY="96" android:scaleX="0.76" android:scaleY="0.76">
+        <path android:fillColor="#00000000" android:strokeColor="#e6cc92" android:strokeWidth="2"
+            android:pathData="M96,34 A62,62 0,1 1,95.99,34" />
+        <path android:fillColor="#00000000" android:strokeColor="#f4f1e9" android:strokeWidth="5"
+            android:strokeLineCap="round" android:strokeLineJoin="round"
+            android:pathData="M40,124 L72,76 L96,108 L122,58 L156,124 M56,133 L136,133" />
+        <path android:fillColor="#e6cc92" android:pathData="M78,50 A7,7 0,1 1,77.99,50" />
+    </group>
+</vector>

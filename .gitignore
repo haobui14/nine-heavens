@@ -3,6 +3,9 @@ dist/
 .openai/sites-state/
 *.tar.gz
 *.log
+artifacts/
+*.jks
+*.keystore
 android/.gradle/
 android/**/build/
 android/local.properties

@@ -1,5 +1,17 @@
 # Build verification
 
+## Android APK — v0.3.0
+
+October 26, 2026. Built with JDK 21.0.8, Gradle 8.14.3 and the installed Android SDK.
+
+- `scripts/build-android.ps1` rebuilds the web game, synchronizes Capacitor, runs `:app:assembleDebug :app:lintDebug`, and verifies signing, alignment and bundled asset contents before copying the deliverable.
+- Native package: `com.nineheavens.game`, version name `0.3.0`, version code `30000`, minimum Android API 24, target/compile API 36. Launcher and splash resources use the Nine Heavens jade mountain emblem instead of the default Capacitor branding.
+- The final native build and Android lint complete successfully. The lint report retains template/resource and tooling warnings; these are included with the artifact for review.
+- APK signature verification passes with APK Signature Scheme v2, and 16 KB page alignment validation passes. All 22 bundled game files match the production `dist/` files byte-for-byte, including all painted artwork. No remote game server URL is configured.
+- All 25 existing game/save tests and the production icon/TypeScript/Vite checks pass. Native preferences remain the save backend. Export now writes a UTF-8 JSON cache file and opens the native share dialog; native settings show app-specific save guidance and immediately report offline availability.
+- Installable test artifact: `artifacts/android/nine-heavens-v0.3.0-debug.apk`; SHA-256 `1ac95067a7aa51e10e15e2bf6a9db3e4cda06a3797288fd10bf2901bb1baa5fd`. The same folder contains the checksum, build log, build metadata and lint reports.
+- This is a debug-signed APK for direct installation/testing. No physical Android device was connected and no emulator run was performed. Native startup, layout, save picker/share targets and lifecycle behavior still require device QA; no Play Store release is claimed.
+
 ## v0.3 — Complete icon replacement
 
 - Replaced the outline icon library and original treasure icon sheet with 48 original painted cells and custom filled utility glyphs. The build audits all statically used icon names, required PNG sheets, and absence of the legacy renderer.

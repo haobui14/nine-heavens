@@ -43,7 +43,17 @@ npx cap sync android
 npm run mobile:android
 ```
 
-Build and test Android with Android Studio and the Android SDK. For iOS, use a Mac with the supported Xcode version:
+To build an installable Android test APK on Windows, use JDK 21 and Android SDK platform 36/build tools 35.0.0 or newer:
+
+```powershell
+.\scripts\build-android.ps1
+```
+
+The script uses `JAVA_HOME` and `ANDROID_HOME` (or `-JavaHome` and `-AndroidSdk` overrides), rebuilds the game, synchronizes Capacitor, assembles and lints the Android app, then writes the APK and SHA-256 checksum into `artifacts/android/`. The package is `com.nineheavens.game`; its installed version follows `package.json`. The APK is signed with this machine's standard Android debug key for direct testing. Retain that key for compatible test-build updates. Store publishing requires a separate release signing configuration.
+
+All game assets are bundled, so the installed app can start without a connection or the private website. Saves use native app preferences. **Export save** opens the native share dialog; **Import save** uses the Android file picker. To continue your browser journey, export it from the browser, transfer the JSON file to your phone, and import it in the app. App and browser saves are separate until you transfer them.
+
+For iOS, use a Mac with the supported Xcode version:
 
 ```sh
 npx cap add ios
@@ -51,7 +61,7 @@ npm run mobile:sync
 npm run mobile:ios
 ```
 
-Adding a platform is a one-time operation. The Android project is committed; add the iOS project on a Mac. Native packages and signing are distinct from the working browser build; only claim a native release after it builds and is tested on a device. Capacitor apps bundle their own assets and do not need a running web server. This machine has no Android SDK, so no APK/AAB is certified by this initial build session.
+Adding a platform is a one-time operation. The Android project is committed; add the iOS project on a Mac. A successful APK build and lint check do not replace physical-device testing of layout, file sharing and lifecycle behavior.
 
 ## Play
 
@@ -66,7 +76,7 @@ Adding a platform is a one-time operation. The Android project is committed; add
 
 ## Save and offline rules
 
-Browser saves use IndexedDB with a recovery copy. Native saves use Capacitor Preferences for the small versioned save pair. A localStorage fallback is available if IndexedDB cannot open. The save-file format is portable between platforms; browser export is verified, while native file-picker/share behavior still needs device testing. Checksums detect accidental corruption; they are not anti-cheat or signatures.
+Browser saves use IndexedDB with a recovery copy. Native saves use Capacitor Preferences for the small versioned save pair. A localStorage fallback is available if IndexedDB cannot open. The save-file format is portable between platforms. Native export writes a UTF-8 JSON file into app cache and hands it to the operating system's share dialog; it requests no broad storage permission. Native file-picker/share behavior still needs physical-device testing. Checksums detect accidental corruption; they are not anti-cheat or signatures.
 
 One tab holds the save writer lock where Web Locks is available. A second tab shows an explanation instead of simultaneously writing the same journey.
 
