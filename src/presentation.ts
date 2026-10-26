@@ -10,7 +10,7 @@ const regionArt: Record<string, string> = { bamboo: 'bamboo-forest', ridge: 'cri
 
 function cultivator(s: GameState) {
   return `<section class="cultivator-card panel"><div class="cultivator-heading"><span class="eyebrow">YOUR CULTIVATOR</span><button class="round-button" data-modal="character" aria-label="Your character details">${icon('ellipsis')}</button></div>
-    <div class="cultivator-identity"><div class="cultivator-portrait"><img src="./assets/cultivator.png" alt="" /></div><div><button class="name-button" data-modal="name">${escape(s.name)} ${icon('pencil')}</button><span>Seeker of the Dao</span><div class="root-tag">${icon('leaf')} Wood spirit root</div></div></div>
+    <div class="cultivator-identity"><div class="cultivator-portrait"><img src="./assets/cultivator-portrait.png" alt="Portrait of your cultivator" /></div><div><button class="name-button" data-modal="name">${escape(s.name)} ${icon('pencil')}</button><span>Seeker of the Dao</span><div class="root-tag">${icon('leaf')} Wood spirit root</div></div></div>
     <div class="realm-info"><span class="realm-emblem">${icon('orbit')}</span><div><h2>${REALMS[s.realm].name}</h2><span>${STAGES[s.stage]} <b>·</b> Realm ${s.realm + 1}</span></div></div>
     <div class="qi-heading"><span>Cultivation progress</span><span><b data-value="qi">${fmt(s.qi)}</b> / <span data-value="cap">${fmt(qiCap(s))}</span> Qi</span></div><div class="progress-track"><span data-progress="qi" style="width:${pct(s.qi, qiCap(s))}%"></span></div>
     <div class="qi-rate"><span><span class="breathing-dot"></span><b data-value="rate">+${qiRate(s).toFixed(1)}</b> Qi / second</span><span data-value="qiPercent">${Math.floor(pct(s.qi, qiCap(s)))}%</span></div>

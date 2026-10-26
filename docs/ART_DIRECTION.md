@@ -33,6 +33,8 @@ The illustrated actors have floating idle motion, attack movement, arrival fades
 
 ## Future asset priorities
 
+The v0.2.1 profile uses the dedicated `public/assets/cultivator-portrait.png` in both the sanctuary card and character-details dialog. It was generated with built-in ImageGen using the full-body character as an identity/costume reference. The exact prompt is in `portrait-v021.json`. The portrait fills a softly squared frame without positional enlargement of the full-body sprite.
+
 1. Skeletal character animation and additional weapon/robe appearances.
 2. Companion portraits, named guardians and realm-specific trial environments.
 3. Original event illustrations, commissioned music and more distinctive effects for each technique.

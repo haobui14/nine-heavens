@@ -6,6 +6,8 @@ The first playable chapter is **First Light**. Cultivate at Jade Peak, explore t
 
 **v0.2 — Spirit awakening** adds original painted character and creature art, three distinct expedition environments, illustrated techniques and treasures, jade-and-gold interface details, elemental combat effects, and breakthrough/victory reveals. The progression rules and save schema remain compatible with v0.1.
 
+**v0.2.1** corrects scene-label contrast, enlarges profile copy, and replaces the cropped full-body avatar with a dedicated portrait. Mobile profile information now stacks vertically for legibility.
+
 ## Run
 
 Requires Node.js 22.12+ (tested locally with Node 24).
@@ -80,6 +82,7 @@ While playing, the game saves periodically and after successful actions, includi
 | `src/art.ts` | Local treasure and spirit-beast atlas mappings |
 | `src/main.ts` | Responsive UI, input, navigation, lifecycle and accessibility |
 | `src/style.css`, `src/touch.css`, `src/rpg.css` | Base layout, touch targets and the v0.2 visual system |
+| `src/readability.css` | Opaque scene-label surfaces and readable profile typography |
 | `scripts/build-sw.mjs` | Fingerprinted production offline cache |
 | `tests/engine.test.ts` | Progression, accounting, combat and save-integrity tests |
 | `docs/GAME_DESIGN.md` | Complete product direction and staged systems |

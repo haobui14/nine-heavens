@@ -1,5 +1,14 @@
 # Build verification
 
+## v0.2.1 — Label contrast and portrait correction
+
+- Replaced the full-body avatar crop with a dedicated portrait in the profile card and character dialog.
+- Shortcut labels now use opaque jade buttons and 11–12 px text. Foreground `#fff6dc` over `#18392d` measures 11.71:1 contrast.
+- Profile secondary text `#5c6757` over the light `#fcf9ef` surface measures 5.64:1 contrast. Disabled standard buttons retain readable text.
+- Scene titles, player captions and combat-power labels have their own backing; text no longer depends on the scenery's brightness.
+- Mobile profile information stacks vertically with a full-size portrait and larger metadata.
+- TypeScript/Vite production build and browser checks cover the changed presentation. Progression and save rules are unchanged; no new gameplay tests were needed for this visual correction.
+
 ## v0.2 — Spirit awakening
 
 October 26, 2026. Visual upgrade, with the v0.1 progression rules and save schema retained.

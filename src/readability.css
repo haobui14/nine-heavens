@@ -1,0 +1,93 @@
+/* Artwork varies in brightness. Small scene labels always get an opaque surface. */
+:root { --muted:#5c6757; }
+.scene-realm-label {
+  max-width:calc(100% - 40px); width:max-content; padding:12px 16px;
+  background:#f7f2e2; border:1px solid #b5a776; border-radius:4px;
+  box-shadow:0 3px 12px #142b211a;
+}
+.scene-realm-label>.eyebrow { color:#526347; font-size:10px; }
+.scene-realm-label h2 { color:#243f30; text-shadow:none; margin-top:6px; }
+.scene-realm-label p { color:#4e5e48; }
+.scene-shortcuts { grid-template-columns:repeat(2,130px); gap:10px; bottom:45px; }
+.scene-shortcuts button {
+  width:130px; min-height:55px; padding:6px 9px; gap:8px;
+  flex-direction:row; justify-content:flex-start;
+  background:#18392d; color:#fff6dc; border:1px solid #b9a773; border-radius:4px;
+  box-shadow:0 3px 8px #10251b30;
+}
+.scene-shortcuts button>span:last-child {
+  font-size:12px; font-weight:600; line-height:1.25; margin:0;
+  letter-spacing:0; text-shadow:none; text-align:left;
+}
+.scene-shortcuts .treasure-art,.scene-shortcuts .beast-art {
+  width:36px; height:36px; flex-shrink:0; outline:none; box-shadow:none;
+}
+.scene-shortcuts button:hover { background:#28523b; }
+.scene-shortcuts button:focus-visible { outline:2px solid #fff6dc; outline-offset:3px; }
+.scene-cultivator-caption {
+  max-width:calc(100% - 32px); padding:8px 13px; background:#18392d;
+  border:1px solid #b9a773; border-radius:4px; color:#fff6dc; text-shadow:none;
+}
+.scene-cultivator-caption>span:last-child { color:#f3ecd6; font-size:11px; }
+.scene-power { padding:7px 10px; background:#18392d; border:1px solid #b9a773; border-radius:4px; }
+.scene-power>span,.scene-power>strong { color:#fff1c8; text-shadow:none; }
+.scene-power>strong { font-size:25px; }
+.page-heading p,.subtle,.root-tag,.cultivator-identity>div:last-child>span,
+.realm-info>div>span,.qi-heading,.qi-rate,.qi-rate>span:first-child,
+.cultivator-stats span,.next-step>div>span:last-child,.world-region p,
+.technique-card p,.technique-effect,.technique-effect>span,.meditation-status span:not(.meditation-icon),
+.page-footer,.build-note { color:#5c6757; }
+.eyebrow,.cultivator-heading>.eyebrow,.section-heading .eyebrow { color:#796139; }
+.cultivator-heading>.eyebrow { font-size:10px; }
+.cultivator-identity>div:last-child>span { font-size:11px; }
+.root-tag,.realm-info>div>span { font-size:11px; }
+.cultivator-stats span { font-size:11px; }
+.qi-heading,.qi-rate { font-size:11px; }
+.cultivator-identity { gap:13px; }
+.character-summary .root-tag { font-size:12px; }
+.character-summary p,.character-stats span,.dialog-footnote {
+  color:#5c6757; font-size:11px; line-height:1.7;
+}
+.character-stats strong { color:#3c553c; font-size:14px; }
+.button:disabled,.button.primary:disabled,.button.secondary:disabled,.breakthrough-button:disabled {
+  color:#626b54; opacity:1;
+}
+@media(max-width:1199px) {
+  .scene-realm-label h2 { max-width:none; }
+  .scene-realm-label p { display:none; }
+  .scene-shortcuts { grid-template-columns:1fr; left:18px; bottom:28px; gap:8px; }
+  .scene-shortcuts button { width:130px; min-height:50px; }
+  .scene-power { top:16px; right:53px; }
+}
+@media(max-width:760px) {
+  .scene-realm-label { top:61px; left:18px; max-width:calc(100% - 36px); padding:10px 12px; }
+  .scene-realm-label>.eyebrow { font-size:9px; letter-spacing:1px; }
+  .scene-realm-label h2 { font-size:24px; max-width:none; margin-top:5px; }
+  .scene-shortcuts { left:15px; bottom:30px; gap:8px; }
+  .scene-shortcuts button { width:126px; min-height:49px; padding:6px 8px; gap:7px; }
+  .scene-shortcuts button>span:last-child { font-size:11px; }
+  .scene-shortcuts .treasure-art,.scene-shortcuts .beast-art { width:32px; height:32px; }
+  .scene-cultivator-caption {
+    left:auto; right:14px; bottom:17px; transform:none; padding:7px 10px;
+    max-width:calc(100% - 160px); white-space:normal; text-align:center;
+  }
+  .cultivator-title { font-size:21px; }
+  .scene-cultivator-caption>span:last-child { font-size:10px; }
+  .scene-power>strong { color:#fff1c8; font-size:18px; }
+  .cultivator-card { display:block; padding:16px 19px 0; }
+  .cultivator-portrait { width:76px; height:80px; border-radius:7px; }
+  .cultivator-identity { gap:15px; padding-bottom:17px; border-bottom:1px solid var(--line); }
+  .name-button { font-size:23px; }
+  .realm-info { margin:19px 0; }
+  .realm-info h2 { font-size:21px; }
+  .cultivator-stats { padding:16px 0; }
+  .equipped-arts>.eyebrow { font-size:10px; }
+  .character-summary .cultivator-portrait { width:162px; height:172px; border-radius:10px; }
+}
+@media(max-width:380px) {
+  .scene-realm-label h2 { font-size:22px; }
+  .scene-shortcuts button { width:117px; }
+  .scene-cultivator-caption { padding:7px; }
+  .cultivator-title { font-size:19px; }
+  .scene-cultivator-caption>span:last-child { font-size:9px; }
+}

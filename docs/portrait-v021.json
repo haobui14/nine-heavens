@@ -1,0 +1,7 @@
+{
+  "version": "0.2.1",
+  "asset": "public/assets/cultivator-portrait.png",
+  "tool": "Built-in ImageGen",
+  "reference": "public/assets/cultivator.png",
+  "prompt": "Use case: identity-preserve. Asset type: a dedicated square character portrait for the profile avatar of Nine Heavens, a Chinese cultivation RPG. Input image is an identity and costume reference only. Create a new close-up head-and-shoulders painted portrait of this same adult male sword cultivator: long dark hair tied in a high topknot with a refined jade-and-gold hair ornament, warm pale skin, strong elegant eyebrows, clear dark eyes, calm confident expression, white and muted sage-green robes with restrained gold embroidery. Face turned only slightly toward the viewer's right, both eyes visible. High-end hand-painted xianxia game illustration, clean fine details around eyes, natural facial proportions, polished expressive face. Composition is critical: head and shoulders fill the square; entire hairstyle and topknot visible with 8 percent padding above, face centered horizontally and about 43 percent down, shoulders reach the bottom edge. Face large and readable at 64 pixel avatar size. Opaque soft desaturated jade background, subtle tonal depth only. No sword, hands, full body, scenery, text, lettering, border, UI or watermark. Preserve the reference character's identity and costume palette. This is a portrait painted for an avatar, not a crop of the full-body image."
+}
