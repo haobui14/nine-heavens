@@ -25,12 +25,11 @@ The dev server intentionally does not install a service worker. Load the product
 
 ## Mobile applications
 
-The same `dist/` web bundle is packaged by Capacitor. The config is `capacitor.config.ts`.
+The same `dist/` web bundle is packaged by Capacitor. The config is `capacitor.config.ts`. The Android source project is already included; synchronize it before opening Android Studio.
 
 ```sh
 npm run build
-npx cap add android
-npm run mobile:sync
+npx cap sync android
 npm run mobile:android
 ```
 
@@ -42,7 +41,7 @@ npm run mobile:sync
 npm run mobile:ios
 ```
 
-Adding a platform is a one-time operation. Generated Android/iOS projects should be committed once created. Native packages and signing are distinct from the working browser build; only claim a native release after it builds and is tested on a device. Capacitor apps bundle their own assets and do not need a running web server.
+Adding a platform is a one-time operation. The Android project is committed; add the iOS project on a Mac. Native packages and signing are distinct from the working browser build; only claim a native release after it builds and is tested on a device. Capacitor apps bundle their own assets and do not need a running web server. This machine has no Android SDK, so no APK/AAB is certified by this initial build session.
 
 ## Play
 
@@ -57,7 +56,7 @@ Adding a platform is a one-time operation. Generated Android/iOS projects should
 
 ## Save and offline rules
 
-Browser saves use IndexedDB with a recovery copy. Native saves use Capacitor Preferences for the small versioned save pair. A localStorage fallback is available if IndexedDB cannot open. Save export/import works between platforms. Checksums detect accidental corruption; they are not anti-cheat or signatures.
+Browser saves use IndexedDB with a recovery copy. Native saves use Capacitor Preferences for the small versioned save pair. A localStorage fallback is available if IndexedDB cannot open. The save-file format is portable between platforms; browser export is verified, while native file-picker/share behavior still needs device testing. Checksums detect accidental corruption; they are not anti-cheat or signatures.
 
 One tab holds the save writer lock where Web Locks is available. A second tab shows an explanation instead of simultaneously writing the same journey.
 

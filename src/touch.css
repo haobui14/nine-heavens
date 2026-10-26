@@ -1,0 +1,15 @@
+/* Preserve the compact painted layout while giving small controls real hit areas. */
+.resource { position: relative; min-height: 40px; min-width: 40px; }
+.brand { min-height: 40px; }
+button.button, .toggle-auto, .next-step > .text-button { min-height: 40px; }
+.round-button:not(.landscape-expand), .name-button, .filter-tab,
+.small-button, .toast > button { position: relative; }
+.round-button::before, .name-button::before, .filter-tab::before,
+.small-button::before, .toast > button::before {
+  content: '';
+  position: absolute;
+  width: max(100%, 40px);
+  height: max(100%, 40px);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -1,4 +1,5 @@
 import './style.css';
+import './touch.css';
 import { createIcons, icons } from 'lucide';
 import { Capacitor } from '@capacitor/core';
 import { ACTIVITIES, REALMS, STAGES, SKILLS, RECIPES, REGIONS, MILESTONES, type Activity } from './game/content';
