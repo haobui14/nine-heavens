@@ -1,4 +1,24 @@
-# Initial build verification
+# Build verification
+
+## v0.2 — Spirit awakening
+
+October 26, 2026. Visual upgrade, with the v0.1 progression rules and save schema retained.
+
+- Production TypeScript/Vite build passes; all 13 runtime assets are included in the fingerprinted offline cache.
+- The existing 25 engine/save tests pass. No dependencies were added for the graphics upgrade.
+- Desktop 1440 × 1000 and mobile 390 × 844 layouts inspected in Chromium.
+- Mobile sanctuary and battle document widths match the viewport content width, with no horizontal overflow.
+- Detailed protagonist, portrait crop, four creature atlas frames, nine treasure atlas cells, and three distinct region backgrounds inspected.
+- Learned two techniques, completed a minor breakthrough, and completed an expedition on a local test save. The illustrated reveals show the actual resulting realm/stats and the already-awarded expedition rewards.
+- Manual combat updates health, cooldowns, encounter progress and action feedback with the new art. Auto combat still completes the starter expedition.
+- Save & update activates the waiting offline worker and reloads while preserving the test journey.
+- Browser console inspected for errors/warnings during the visual test flow.
+
+The current local production preview is accessible and was used for gameplay QA without spending the hosted player's resources. Native SDK/device and full airplane-mode limitations below still apply. Actors use animated painted poses, not skeletal animation. The uncompressed original art totals approximately 20 MB and increases the initial download.
+
+Screenshots: `desktop-v02.png` and `mobile-v02.png`.
+
+## v0.1 — First Light
 
 October 26, 2026. Browser release: Nine Heavens v0.1, First Light.
 

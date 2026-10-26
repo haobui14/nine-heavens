@@ -4,6 +4,8 @@ An original single-player cultivation RPG, built from scratch for desktop and mo
 
 The first playable chapter is **First Light**. Cultivate at Jade Peak, explore three regions, learn six techniques, refine your sword, brew elixirs, befriend Little Cloud, join Azure Cloud, and challenge major-realm tribulations.
 
+**v0.2 — Spirit awakening** adds original painted character and creature art, three distinct expedition environments, illustrated techniques and treasures, jade-and-gold interface details, elemental combat effects, and breakthrough/victory reveals. The progression rules and save schema remain compatible with v0.1.
+
 ## Run
 
 Requires Node.js 22.12+ (tested locally with Node 24).
@@ -22,6 +24,8 @@ npm run preview
 ```
 
 The dev server intentionally does not install a service worker. Load the production build once over HTTPS or localhost, wait for “Available offline,” then it can reopen without a connection. A browser needs an initial download. Private hosting may require the owner's sign-in to access the initial download; the game itself has no account or backend.
+
+When a downloaded update is ready, **Save & update** writes the current journey before activating the new offline cache and reloading. If the save fails, the game leaves the current session open.
 
 ## Mobile applications
 
@@ -71,14 +75,17 @@ While playing, the game saves periodically and after successful actions, includi
 | `src/game/content.ts` | Realms, techniques, recipes, regions and milestones |
 | `src/game/engine.ts` | All gameplay mutations, elapsed-time processing and seeded combat |
 | `src/game/save.ts` | Validation, checksum envelopes, storage, backups and transfer |
-| `src/scene.ts` | Phaser visual scene, particles and combat feedback |
+| `src/scene-rpg.ts` | Illustrated Phaser actors, particles, elemental impacts and damage feedback |
+| `src/presentation.ts` | Game screens and illustrated cards |
+| `src/art.ts` | Local treasure and spirit-beast atlas mappings |
 | `src/main.ts` | Responsive UI, input, navigation, lifecycle and accessibility |
-| `src/style.css` | Visual system and desktop/mobile layouts |
+| `src/style.css`, `src/touch.css`, `src/rpg.css` | Base layout, touch targets and the v0.2 visual system |
 | `scripts/build-sw.mjs` | Fingerprinted production offline cache |
 | `tests/engine.test.ts` | Progression, accounting, combat and save-integrity tests |
 | `docs/GAME_DESIGN.md` | Complete product direction and staged systems |
 | `docs/ARCHITECTURE.md` | Platform and engineering decisions |
 | `docs/ART_DIRECTION.md` | Visual system, asset provenance and exact generation prompt |
+| `docs/visual-assets-v02.json` | Exact prompts for every new v0.2 generated asset |
 
 ## Scope
 

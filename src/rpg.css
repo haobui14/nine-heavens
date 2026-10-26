@@ -1,0 +1,267 @@
+:root {
+  --paper:#eee9dc; --surface:#fcf9ef; --ink:#303c35; --muted:#7e806e;
+  --jade:#32634d; --jade-dark:#204a39; --jade-light:#dce6d3; --copper:#a88a4f;
+  --line:#dcd3bc; color:#374438; background:#eee9dc;
+}
+body { background-image:radial-gradient(ellipse at 80% 0,#faf6e6 0,transparent 55%),repeating-linear-gradient(45deg,#8b704403 0 1px,transparent 1px 5px); }
+.topbar { background:#243e35; border-bottom:2px solid #b49a5f; color:#eee3c8; box-shadow:0 3px 15px #1c31221c; }
+.brand-words strong { color:#f4e7c7; letter-spacing:2.7px; }
+.brand-words small { color:#b9b18d; }
+.brand-mark { color:#e7ce8a; background:linear-gradient(145deg,#53684b,#233c31); box-shadow:inset 0 0 0 1px #bca46a; }
+.single-player { color:#a6b6a0; }
+.single-player svg { color:#adbf93; }
+.resource { background:#ffffff0a; border-color:#d5c39435; color:#e5d7b6; border-radius:3px; }
+.resource.herbs,.resource.iron { background:#ffffff0a; border-color:#d5c39435; }
+.resource svg,.resource.herbs svg,.resource.iron svg { color:#d1bb82; }
+.resource:hover { background:#ffffff17; }
+.avatar { background:#687a5544; border-color:#c8b47777; color:#dccb9e; }
+.sidebar { background:linear-gradient(180deg,#f7f3e7,#ede8d9); border-right-color:#d7cbae; }
+.sidebar-group>.eyebrow { color:#9b8a64; font-size:9px; }
+.nav-item { color:#737b64; font-size:12px; }
+.nav-item.active { background:linear-gradient(90deg,#dce5cd,#e6eadc); box-shadow:inset 3px 0 0 #8c9d67,0 1px 2px #273b2510; color:#3d5c39; }
+.nav-item.active::after { content:'◆'; margin-left:auto; font-size:7px; color:#a68b4c; }
+.nav-dot { display:none; }
+.nav-item.active svg { color:#647c4b; }
+.chapter-note { border-color:#d9cfb6; }
+.chapter-note strong { color:#7c7456; }
+.page-heading { margin-bottom:22px; }
+h1 { color:#344b3a; font-size:32px; }
+.page-heading p { color:#8c8973; font-size:12px; }
+.breadcrumb { color:#9b8d69; }
+.eyebrow { color:#a08b57; }
+.world-time>span { color:#8b7f5c; }
+.world-time small { color:#a69a7a; }
+.panel,.landscape-card { border-radius:5px; box-shadow:0 0 0 1px #bca5776b,inset 0 0 0 4px #fffcf266,0 3px 9px #49391509; }
+.sanctuary-grid { grid-template-columns:minmax(0,1fr) 310px; gap:22px; }
+.sanctuary-grid > * { min-width:0; }
+.rpg-sanctuary { height:430px; background-position:62% 45%; }
+.rpg-sanctuary::after { background:linear-gradient(0deg,#1e352b65 0%,transparent 38%),linear-gradient(90deg,#e8e9d966,transparent 75%); z-index:0; }
+.rpg-sanctuary::before { content:''; position:absolute; inset:9px; border:1px solid #d8d9b16b; pointer-events:none; z-index:2; }
+.location-badge { color:#dee1c1; background:#294b3bcc; border:1px solid #c3b7776b; backdrop-filter:blur(8px); font-size:8px; letter-spacing:1.1px; border-radius:2px; }
+.location-badge span { color:#b1b68f; }
+.landscape-expand { color:#d3d7b8; background:#2b493aa3; border:1px solid #c6b98855; }
+.scene-realm-label { position:absolute; top:82px; left:28px; z-index:2; pointer-events:none; }
+.scene-realm-label>.eyebrow { color:#657c56; font-size:8px; letter-spacing:2px; }
+.scene-realm-label h2 { font-family:var(--serif); font-size:30px; font-weight:400; line-height:1.2; color:#35503e; margin-top:9px; text-shadow:0 1px 10px #f7f3e1cc; }
+.scene-realm-label p { font-family:var(--serif); font-size:12px; font-style:italic; color:#68785b; max-width:190px; margin-top:10px; }
+.scene-shortcuts { position:absolute; left:24px; bottom:75px; z-index:2; display:grid; grid-template-columns:repeat(2,56px); gap:14px 13px; }
+.scene-shortcuts button { display:flex; align-items:center; flex-direction:column; justify-content:center; width:56px; min-height:64px; position:relative; padding:0; color:#f3eacb; }
+.scene-shortcuts .treasure-art,.scene-shortcuts .beast-art { width:46px; height:46px; border-radius:50%; background-color:#153c2b70; outline:1px solid #d6bd7e8c; box-shadow:0 0 0 3px #e9dfbb22,0 3px 10px #142a2044; }
+.scene-shortcuts button>span:last-child { font-size:9px; margin-top:7px; text-shadow:0 1px 5px #102d1b; letter-spacing:.25px; }
+.scene-shortcuts button:hover .treasure-art { box-shadow:0 0 0 3px #dcc57a55,0 0 18px #d9cc8a66; }
+.scene-cultivator-caption { position:absolute; left:63%; bottom:15px; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:5px; z-index:2; color:#f0e1b7; white-space:nowrap; text-shadow:0 2px 6px #14281b; }
+.cultivator-title { font-family:var(--serif); font-size:22px; letter-spacing:2px; }
+.scene-cultivator-caption>span:last-child { font-size:9px; color:#cddab8; }
+.scene-power { position:absolute; right:24px; top:73px; z-index:2; text-align:right; color:#7b7950; }
+.scene-power>span { display:flex; align-items:center; gap:5px; font-size:7px; letter-spacing:1px; }
+.scene-power svg { width:11px; height:11px; }
+.scene-power>strong { font-family:var(--serif); font-size:30px; font-weight:400; color:#7b7548; text-shadow:0 1px 7px #f2e5b6; }
+.meditation-bar { padding:17px 20px; background:linear-gradient(#faf9ee,#f3f1e3); border-top:1px solid #b4b59166; }
+.meditation-status strong { color:#63754f; font-size:12px; }
+.meditation-status span:not(.meditation-icon) { color:#989579; font-size:10px; }
+.button { border-radius:3px; font-size:12px; }
+.button.primary { background:linear-gradient(#52794d,#31583b); box-shadow:inset 0 0 0 1px #c8c89a44,inset 0 2px 0 #e4e2b322,0 2px 4px #25432320; color:#faf2d3; border:1px solid #405f35; }
+.button.primary:hover:not(:disabled) { background:linear-gradient(#608756,#375f3d); box-shadow:0 3px 12px #25432330; }
+.button.primary:disabled { border-color:#d4d8c6; background:#e4e6d8; color:#9fa68c; }
+.button.secondary { background:linear-gradient(#fbf7e9,#ece7d6); color:#8b7d56; box-shadow:inset 0 0 0 1px #caba9280; }
+.button.secondary:hover:not(:disabled) { background:#eee9d4; }
+.cultivator-card { padding-top:15px; position:relative; background:linear-gradient(145deg,#fffdf3,#f2eedf); }
+.cultivator-card::before { content:''; position:absolute; top:0; left:18px; right:18px; height:3px; background:linear-gradient(90deg,transparent,#baa165,transparent); }
+.cultivator-identity { padding-bottom:17px; }
+.cultivator-portrait { width:61px; height:67px; border-radius:50% 50% 5px 5px; background:radial-gradient(ellipse at center,#c4d4b5,#ecebd6); border:1px solid #c5bb8e; }
+.cultivator-portrait::before { display:none; }
+.cultivator-portrait img { position:absolute; width:500%; height:500%; max-width:none; object-fit:contain; left:-220%; top:-6%; }
+.name-button { font-size:21px; color:#4b6044; }
+.realm-info { margin:20px 0; }
+.realm-info h2 { font-size:20px; color:#747044; }
+.realm-emblem { width:40px; height:40px; border:1px solid #caba86; outline:1px solid #caba8644; outline-offset:3px; background:radial-gradient(#f9f2d8,#e6dfbe); color:#a18c45; }
+.qi-heading { font-size:10px; color:#9a9478; }
+.progress-track { height:7px; background:#dcdcca; box-shadow:inset 0 1px 2px #373b1e15; }
+.progress-track>span { background:linear-gradient(90deg,#476d43,#a5b473); box-shadow:0 0 8px #bdcc7f44; }
+.qi-rate { font-size:9px; }
+.breakthrough-button { background:linear-gradient(#e9dfb5,#d6c791); color:#806936; border:1px solid #c5ae72; margin-top:18px; min-height:42px; }
+.breakthrough-button:disabled { background:linear-gradient(#efebd9,#e5e0ca); color:#b1a77d; border-color:#d5cba8; }
+.breakthrough-button:not(:disabled) { background:linear-gradient(#eddfaa,#d4bf7f); color:#78602d; box-shadow:0 0 13px #b8a46215; }
+.cultivator-stats { margin-top:21px; padding:16px 0; }
+.cultivator-stats strong { font-family:var(--serif); font-size:18px; color:#6b754c; }
+.cultivator-stats span { font-size:9px; color:#aaa17b; }
+.equipped-arts { border-top:1px solid var(--line); padding:13px 0 17px; display:flex; align-items:center; gap:16px; justify-content:space-between; }
+.equipped-arts>.eyebrow { font-size:7px; max-width:70px; line-height:1.8; }
+.equipped-arts>div { display:flex; gap:7px; }
+.art-mini { width:38px; height:38px; padding:2px; border:1px solid #bcad7d; border-radius:4px; background:linear-gradient(145deg,#f6edcf,#dfd7b8); position:relative; }
+.art-mini::after { content:''; position:absolute; inset:-3px; }
+.art-mini .treasure-art { width:100%; height:100%; }
+.art-mini.add-art { color:#a9a078; border-style:dashed; background:#eeead7; }
+.art-mini.add-art svg { width:15px; height:15px; }
+.next-step { background:linear-gradient(90deg,#eee9d4,#f3eedf); border-color:#d7cbaa; }
+.next-step strong { color:#81734a; font-size:17px; }
+.next-step>div>span:last-child { color:#a59873; font-size:11px; }
+.section-heading h2 { color:#626f47; font-size:24px; }
+.section-heading .eyebrow { color:#a48e55; font-size:8px; }
+.region-grid { gap:15px; }
+.region-card { border-radius:4px; box-shadow:0 0 0 1px #baa36c88,0 3px 6px #4d3f200b; }
+.region-art,.region-card.copper .region-art,.region-card.indigo .region-art { height:160px; background:linear-gradient(0deg,#172c2499,transparent 70%),var(--region-art) center/cover; filter:none; }
+.region-art::after { content:''; position:absolute; inset:6px; border:1px solid #d8ce9b55; pointer-events:none; }
+.region-difficulty { color:#eee0b6; background:#1e382ad4; font-size:8px; padding:5px 7px; top:13px; left:13px; border:1px solid #b5ae7355; }
+.region-difficulty svg { width:9px; height:9px; }
+.region-card.locked .region-difficulty { background:#252d45cc; }
+.region-art-label { font-size:7px; letter-spacing:1.2px; color:#e2d5a9; bottom:14px; left:14px; }
+.region-illustration { opacity:.6; bottom:28px; }
+.region-card-body { padding:16px 13px; background:linear-gradient(#fffbef,#f1ead6); border-top:1px solid #c5b17b88; }
+.region-card h3 { font-size:16px; color:#6f714b; }
+.region-card h3 svg { color:#ac9763; }
+.region-rewards>span { font-size:10px; color:#9e906b; }
+.region-rewards svg { width:12px; height:12px; color:#93a574; }
+.journal-preview .section-heading h2 { font-size:21px; }
+.journal-entry strong { font-size:11px; color:#7b855f; }
+.journal-entry p { font-size:10px; color:#a0987a; }
+.journal-entry>div>span { font-size:8px; }
+.journal-quote { color:#b19d6f; font-size:12px; }
+.milestone { background:linear-gradient(#faf5e5,#f3edda); border-color:#d5c69e; }
+.milestone strong { font-size:12px; color:#85805a; }
+.milestone>div>span { font-size:10px; }
+.milestone-state { font-size:10px; }
+.small-button { background:linear-gradient(#dce5c5,#c8d6ad); color:#617746; box-shadow:inset 0 0 0 1px #a9bc89; }
+.treasure-art { display:inline-block; width:64px; height:64px; background-image:url('/assets/treasures.png'); background-size:300% 300%; background-repeat:no-repeat; flex-shrink:0; vertical-align:middle; }
+.art-sword { background-position:0% 0%; }.art-lotus { background-position:50% 0%; }.art-ember { background-position:100% 0%; }
+.art-tide { background-position:0% 50%; }.art-stone { background-position:50% 50%; }.art-thunder { background-position:100% 50%; }
+.art-manual { background-position:0% 100%; }.art-pill { background-position:50% 100%; }.art-crystal { background-position:100% 100%; }
+.beast-art { display:inline-block; width:100px; height:100px; background-image:url('/assets/spirit-beasts.png'); background-size:200% 200%; background-repeat:no-repeat; flex-shrink:0; }
+.beast-frame-0 { background-position:0 0; }.beast-frame-1 { background-position:100% 0; }.beast-frame-2 { background-position:0 100%; }.beast-frame-3 { background-position:100% 100%; }
+.loadout-banner { background:linear-gradient(110deg,#e4e7d2,#f0ecd8); border:1px solid #c7bd91; }
+.loadout-banner .large-icon { width:90px; height:90px; background:radial-gradient(#d9d5ac,#d6dfc166); border:1px solid #c8bc82; outline:1px solid #c8bc8244; outline-offset:5px; }
+.large-icon .treasure-art { width:82px; height:82px; }
+.technique-card { overflow:hidden; padding:23px; background:linear-gradient(155deg,#fffdf4,#f0eddb); }
+.technique-top { position:relative; min-height:150px; margin:-23px -23px 23px; padding:20px; display:flex; justify-content:center; background:radial-gradient(ellipse at 50% 80%,#ded8b6aa,transparent 65%),linear-gradient(145deg,#efeddc,#e2e3cb); border-bottom:1px solid #cfc498; }
+.technique-top::before { content:''; width:108px; height:108px; border:1px solid #bdae7366; border-radius:50%; position:absolute; top:22px; left:50%; transform:translateX(-50%); box-shadow:0 0 0 7px #e6dec122; }
+.technique-icon { width:118px; height:118px; border-radius:0; background:none!important; z-index:1; }
+.technique-icon .treasure-art { width:118px; height:118px; filter:drop-shadow(0 6px 8px #746b3a2b); }
+.element-tag { position:absolute; top:16px; left:16px; color:#8e8054; background:#fff9dfaa; border:1px solid #c8b98366; font-size:9px; }
+.technique-equipped-seal { position:absolute; right:13px; top:14px; color:#8a7b41; font-size:7px; letter-spacing:1px; writing-mode:vertical-rl; border:1px solid #b6a367; padding:7px 4px; }
+.technique-card.wood .technique-top { background:radial-gradient(ellipse at 50% 80%,#bfce9d99,transparent 65%),linear-gradient(145deg,#eef2df,#d9e2c5); }
+.technique-card.fire .technique-top { background:radial-gradient(ellipse at 50% 80%,#e0ae7877,transparent 65%),linear-gradient(145deg,#f6ebd5,#ebd1ab); }
+.technique-card.water .technique-top { background:radial-gradient(ellipse at 50% 80%,#a5c6c766,transparent 65%),linear-gradient(145deg,#eef2e6,#d0e1da); }
+.technique-card.earth .technique-top { background:radial-gradient(ellipse at 50% 80%,#cbbb7a77,transparent 65%),linear-gradient(145deg,#f4efda,#e1d5ab); }
+.technique-card.lightning .technique-top { background:radial-gradient(ellipse at 50% 80%,#baabd377,transparent 65%),linear-gradient(145deg,#f2edf0,#dad2e1); }
+.technique-card h2 { font-size:23px; }
+.technique-card p { font-size:12px; line-height:1.7; color:#9a9279; }
+.technique-card.equipped { box-shadow:0 0 0 1px #a4ad6a,inset 0 0 0 4px #d9dfb533,0 4px 10px #4c61220b; }
+.technique-effect { font-size:10px; }
+.technique-effect>span { font-size:9px; }
+.equipped-button { color:#758344; background:linear-gradient(#e7eace,#d5ddba); border:1px solid #bac291; }
+.item-art { background:radial-gradient(ellipse,#d9dec0,#eae7d4 75%); min-height:290px; overflow:hidden; }
+.sword-art>.treasure-art { width:220px; height:220px; filter:drop-shadow(0 8px 12px #596b3c44); transform:rotate(-12deg); }
+.weapon-stars { font-size:16px; color:#b99c51; letter-spacing:6px; position:absolute; bottom:47px; }
+.item-art>span:not(.treasure-art) { color:#9b8b58; font-size:8px; bottom:22px; }
+.material-icon .treasure-art { width:36px; height:36px; }
+.pill-icon { width:86px; height:86px; border-radius:8px; background:radial-gradient(#d6ddba,#eeeedb)!important; border:1px solid #bdb582; box-shadow:inset 0 0 0 4px #faf5e855!important; }
+.pill-icon .treasure-art { width:82px; height:82px; }
+.pill-icon.foundation .treasure-art { filter:sepia(.5) saturate(1.3); }
+.pill-icon.insight .treasure-art { filter:hue-rotate(60deg); }
+.pill-card>.pill-icon { width:68px; height:68px; }
+.pill-card>.pill-icon .treasure-art { width:64px; height:64px; }
+.pet-card { position:relative; overflow:hidden; min-height:235px; background:linear-gradient(130deg,#f5f3df,#dbe5cb); }
+.pet-portrait { width:150px; height:160px; background:none; border-radius:0; margin:8px -8px 0 -7px; }
+.pet-portrait>.beast-art { width:160px; height:160px; filter:drop-shadow(0 5px 5px #5d6f3e22); }
+.pet-card>div { z-index:1; }
+.assignment-card .assignment-icon { width:60px; height:60px; border:1px solid #d2c89f; background:#ece8d4; }
+.assignment-icon>.treasure-art { width:58px; height:58px; }
+.abode-hero { background:linear-gradient(90deg,#ecebdbef,#e5ebda50),url('/assets/bamboo-forest.png') center/cover; min-height:250px; border:1px solid #c7ba8c; }
+.furnace-banner { background:linear-gradient(110deg,#ede4c9ef,#e2ceacb5),url('/assets/crimson-ridge.png') 25% 15%/cover; border-color:#cbb180; }
+.furnace-illustration { width:120px; height:120px; background:radial-gradient(#e0bc8388,transparent 70%); }
+.furnace-illustration>.treasure-art { width:125px; height:125px; filter:drop-shadow(0 0 12px #d3b77588); }
+.recipe-heading { align-items:center; min-height:105px; margin-bottom:22px; }
+.recipe-card { background:linear-gradient(155deg,#fff9e9,#eee5cc); }
+.recipe-card h2 { font-size:24px; }
+.recipe-card p { font-size:12px; }
+.ingredient-list>span { font-size:11px; }
+.recipe-owned { font-size:10px; }
+.sect-hero { background:linear-gradient(90deg,#ebe7d7ef,#d3dec6aa),url('/assets/bamboo-forest.png') 70% 30%/cover; border:1px solid #b8aa7a; }
+.sect-seal { color:#809566; border-color:#86976588; outline-color:#86976555; background:#f3efd93b; }
+.world-map { border:1px solid #b5aa7c; box-shadow:inset 0 0 0 7px #faf2d144; }
+.world-region .region-art { height:180px; }
+.world-region .region-card h3 { font-size:21px; }
+.world-region .region-rewards { margin-top:15px; }
+.world-region p { font-size:12px; color:#968a68; }
+.map-node>span { border-color:#bca56b; color:#7f8754; background:radial-gradient(#fcf5d9,#e1dfbe); }
+.map-node strong { color:#536343; }
+.battle-panel { overflow:hidden; border:1px solid #bfa570; }
+.battle-title { background:linear-gradient(#f9f3df,#eee5ce); border-bottom:1px solid #bdaa7288; padding:18px 24px; }
+.battle-title>.eyebrow,.battle-title>div>.eyebrow { font-size:7px; margin-bottom:5px; }
+.battle-title h2 { color:#7d7149; font-size:27px; }
+.battle-title>div>span { color:#a08d60; }
+.battle-arena,.battle-arena.trial-arena { height:440px; background:linear-gradient(0deg,#15312444,transparent 45%),var(--battle-art) center/cover; }
+.battle-arena::after { display:none; }
+.battle-nameplate { top:22px; width:28%; background:#16352be6; border:1px solid #c2b070aa; border-radius:3px; padding:9px 14px; color:#ece4bd; box-shadow:0 3px 10px #12271f33; }
+.battle-nameplate strong { font-size:21px; }
+.player-nameplate { left:3%; }
+.enemy-nameplate { right:3%; background:#382e26e6; border-color:#bd9763aa; color:#f2dfb1; }
+.fighter-tag { color:#b0c3a1; font-size:6px!important; letter-spacing:1.4px; display:block; margin:0 0 4px!important; }
+.enemy-nameplate .fighter-tag { color:#cfb48b; }
+.health-track { height:6px; background:#0b241c88; margin-top:6px; }
+.health-track>span { background:linear-gradient(90deg,#658f53,#afc77d); }
+.enemy-health { background:#321c1588; }
+.enemy-health>span { background:linear-gradient(90deg,#ab6649,#dbaa6c); }
+.battle-nameplate>span:last-child { font-size:9px; color:#c0ccac; }
+.enemy-nameplate>span:last-child { color:#d9c1a0; }
+.battle-message { background:#173428c9; color:#e2d7ad; font-size:12px; border:1px solid #ccb87355; left:12%; right:12%; bottom:17px; padding:10px; backdrop-filter:blur(8px); }
+.encounter-beads { display:flex; gap:10px; position:absolute; top:24px; left:50%; transform:translateX(-50%); z-index:2; }
+.encounter-beads>span { width:9px; height:9px; border-radius:50%; background:#20392d; border:1px solid #d1ba7d99; box-shadow:0 0 0 3px #223b2f55; }
+.encounter-beads>span.current { background:#e6cd8d; box-shadow:0 0 10px #f0dc9d99; }
+.encounter-beads>span.complete { background:#93b075; }
+.battle-controls { background:linear-gradient(#f6eed9,#e9dfc4); padding:18px; gap:11px; }
+.battle-skill { position:relative; background:linear-gradient(145deg,#f7f0d9,#ddd9b9); border:1px solid #b6aa78; border-radius:5px; padding:10px 9px 12px; color:#747947; min-height:125px; box-shadow:inset 0 0 0 3px #faf4d855,0 2px 3px #6457290b; }
+.battle-skill>.treasure-art { width:65px; height:65px; margin-top:-3px; }
+.battle-skill strong { font-family:var(--serif); font-size:13px; }
+.battle-skill>span:not(.treasure-art) { font-size:9px; color:#9a956f; }
+.battle-skill:disabled { filter:saturate(.35); opacity:.55; }
+.battle-skill.basic { background:linear-gradient(#dde6c4,#ccd7ad); border-color:#a7b381; }
+.battle-skill.fire { background:linear-gradient(#f7e5c7,#e6cc9e); border-color:#c5a66d; }
+.cooldown-counter { position:absolute; top:8px; right:10px; font-family:var(--serif); font-size:20px; color:#877d5d; }
+.toggle-auto { background:#e9dfc5; color:#8b7d56; border:1px solid #c8b880; font-size:11px; }
+.toggle-auto.on { background:linear-gradient(#e0e7c6,#ccd9af); color:#6e814a; border-color:#acb985; }
+.game-dialog { background:linear-gradient(145deg,#fffaec,#eee6ce); border-color:#b69a5a; border-radius:6px; box-shadow:0 25px 100px #17251b50,inset 0 0 0 5px #fffcf344; }
+.game-dialog>.dialog-heading h2 { color:#75623b; }
+.game-dialog::backdrop { background:#15271f8c; }
+.region-modal-art { height:185px; border:1px solid #beaa75; }
+.region-modal-art.jade { background:linear-gradient(0deg,#17392833,transparent),url('/assets/bamboo-forest.png') center/cover; }
+.region-modal-art.copper { background:url('/assets/crimson-ridge.png') center/cover; filter:none; }
+.region-modal-art.indigo { background:url('/assets/moonlit-ruins.png') center/cover; filter:none; }
+.region-modal-art>svg { opacity:.5; filter:drop-shadow(0 2px 4px #18362688); }
+.character-summary .cultivator-portrait { width:155px; height:190px; border-radius:50% 50% 4px 4px; }
+.character-summary .cultivator-portrait img { width:190%; height:190%; left:-45%; top:0; object-fit:contain; }
+.character-summary h2 { color:#697746; }
+.rpg-result { text-align:center; overflow:hidden; }
+.rpg-result .dialog-heading { position:relative; z-index:2; }
+.rpg-result .dialog-heading h2 { font-size:24px; }
+.result-illustration { position:relative; width:190px; height:190px; margin:5px auto 18px; border:1px solid #b5a26366; border-radius:50%; background:radial-gradient(#d9dcb3aa,#e9e0bf33 60%,transparent 70%); }
+.result-illustration::before { content:''; position:absolute; inset:-9px; border:1px solid #c5b57b77; border-radius:50%; }
+.result-illustration>img { width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 0 12px #e6d38e55); }
+.result-illustration>.treasure-art { width:160px; height:160px; margin:12px; }
+.result-title { font-family:var(--serif); font-size:29px; color:#9c8344; letter-spacing:1.5px; margin:10px 0; }
+.result-realm { font-size:14px; color:#7f8d5e; }
+.result-loot { display:flex; justify-content:center; gap:13px; margin:24px 0; }
+.result-loot>span { min-width:90px; border:1px solid #c5b37b; padding:14px 10px; background:#f5eed8; display:flex; flex-direction:column; align-items:center; gap:8px; border-radius:4px; }
+.result-loot strong { font-family:var(--serif); font-size:22px; color:#7e8c58; }
+.result-loot small { font-size:9px; color:#9e916c; }
+.result-loot svg { color:#98a26f; width:22px; height:22px; }
+.result-loot .treasure-art { width:45px; height:45px; }
+.notice { color:#8c8969; background:#e9e6d3; border:1px solid #d7ceb0; }
+.page-footer { color:#aa9d7c; border-color:#d6cba9; }
+.toast { background:#faf4e2; border-color:#bdaa75; color:#7f8052; }
+.boot-screen .brand-words strong { color:#425a3d; }
+.boot-screen .brand-words small { color:#9a946e; }
+.update-notice { position:fixed; bottom:18px; left:50%; transform:translateX(-50%); z-index:90; display:flex; align-items:center; gap:20px; padding:12px 15px; background:#fbf4dc; border:1px solid #b4a16b; border-radius:5px; box-shadow:0 5px 25px #22351b22; color:#8e8255; }
+.update-notice>span { display:flex; gap:8px; align-items:center; font-size:11px; white-space:nowrap; }
+.update-notice>span>svg { width:17px; height:17px; color:#ac9b5e; }
+.update-notice>.button { font-size:10px; }
+@media(max-width:760px){.update-notice{bottom:83px;left:14px;right:14px;transform:none;justify-content:space-between;gap:9px;padding:10px 12px}.update-notice>span{font-size:10px}.update-notice>.button{font-size:10px;padding:9px 12px}}
+.mobile-nav { background:linear-gradient(#f7f0df,#e7dfc7); border-top:2px solid #b49b62; }
+.mobile-nav-item.active { background:linear-gradient(#d9e2c6,#e7e9d4); box-shadow:inset 0 2px 0 #9da56e; }
+.mobile-nav-item.active::after { display:none; }
+@media(min-width:1650px){.sanctuary-grid,.lower-grid{grid-template-columns:minmax(0,1fr) 340px}.rpg-sanctuary{height:470px}.scene-realm-label{top:95px;left:36px}.scene-realm-label h2{font-size:36px}.scene-shortcuts{left:32px;bottom:90px;gap:17px}.scene-shortcuts button{width:60px}.cultivator-card{padding-top:21px}.cultivator-stats{margin-top:28px}.region-art{height:185px}}
+@media(max-width:1199px){.sanctuary-grid,.lower-grid{grid-template-columns:minmax(0,1fr) 270px}.rpg-sanctuary{height:440px}.scene-realm-label{left:22px;top:80px}.scene-realm-label h2{font-size:25px;max-width:180px}.scene-realm-label p{font-size:11px;max-width:150px}.scene-power{top:18px;right:51px}.scene-power>span{display:none}.scene-power>strong{font-size:22px;color:#d4d3a9}.scene-shortcuts{left:18px;gap:13px 8px;grid-template-columns:repeat(2,48px);bottom:88px}.scene-shortcuts button{width:48px}.scene-shortcuts .treasure-art,.scene-shortcuts .beast-art{width:42px;height:42px}.scene-shortcuts button>span:last-child{font-size:8px}.scene-cultivator-caption{left:65%;bottom:22px}.cultivator-stats strong{font-size:17px}.equipped-arts{gap:8px}.equipped-arts>div{gap:5px}.art-mini{width:33px;height:33px}.region-card h3{font-size:13px}.region-art{height:145px}.region-difficulty{font-size:6px;padding:5px;left:10px;top:10px}.region-art-label{font-size:5px;left:10px}.region-card-body{padding:14px 10px}.region-rewards>span{font-size:8px}.technique-top{margin:-23px -23px 21px}.technique-card h2{font-size:21px}.battle-controls{grid-template-columns:repeat(3,1fr)}.pet-card{min-height:200px}.technique-effect>span{font-size:8px}.region-grid{gap:11px}.next-step strong{font-size:16px}.next-step>div>span:last-child{font-size:10px}}
+@media(max-width:1000px) and (min-width:761px){.sanctuary-grid{grid-template-columns:minmax(0,1fr) 255px}.lower-grid{grid-template-columns:1fr}.rpg-sanctuary{height:450px}.scene-shortcuts{grid-template-columns:1fr;gap:10px;bottom:30px}.scene-shortcuts button{min-height:58px}.scene-realm-label h2{font-size:23px}.scene-realm-label p{font-size:10px}.scene-cultivator-caption{left:65%;bottom:24px}.cultivator-title{font-size:19px}.scene-cultivator-caption>span:last-child{font-size:8px}.region-art{height:175px}.region-card h3{font-size:17px}.recipe-heading{float:none}.recipe-card p{min-height:0}.recipe-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.recipe-card .ingredient-list{flex-direction:column}.pet-portrait{width:135px}.world-region .region-card h3{font-size:16px}}
+@media(max-width:760px){
+  .topbar{height:69px}.brand-words strong{font-size:15px;letter-spacing:1.7px}.main{padding-top:22px}.page-heading{margin-bottom:19px}h1{font-size:29px}.page-heading p{font-size:11px}.sanctuary-grid{grid-template-columns:minmax(0,1fr);gap:19px}.rpg-sanctuary{height:430px;background-position:62% 50%}.rpg-sanctuary::before{inset:7px}.location-badge{font-size:6px;top:16px;left:16px;padding:7px}.scene-realm-label{top:70px;left:21px}.scene-realm-label>.eyebrow{font-size:6px;letter-spacing:1.5px}.scene-realm-label h2{font-size:25px;max-width:245px;margin-top:9px}.scene-realm-label p{display:none}.scene-shortcuts{left:18px;bottom:35px;grid-template-columns:1fr;gap:10px}.scene-shortcuts button{width:50px;min-height:58px}.scene-shortcuts .treasure-art,.scene-shortcuts .beast-art{width:40px;height:40px}.scene-shortcuts button>span:last-child{font-size:8px;margin-top:5px}.scene-power{top:18px;right:55px}.scene-power>strong{font-size:19px;color:#d7d5ad}.scene-cultivator-caption{left:64%;bottom:17px}.cultivator-title{font-size:23px}.scene-cultivator-caption>span:last-child{font-size:8px}.meditation-bar{padding:16px;min-height:79px}.meditation-status span:not(.meditation-icon){font-size:9px;max-width:160px}.meditation-status strong{font-size:12px}.focus-button{font-size:11px;padding:10px 12px}.cultivator-card{padding:14px 18px 0;column-gap:18px}.cultivator-portrait{width:48px;height:58px}.name-button{font-size:20px}.cultivator-identity{padding-bottom:13px}.realm-info{margin:7px 0 13px}.realm-info h2{font-size:17px}.realm-emblem{width:30px;height:30px;outline-offset:2px}.realm-emblem>svg{width:18px;height:18px}.qi-heading{font-size:8px}.qi-rate{font-size:8px}.breakthrough-button{margin-top:19px;font-size:11px}.cultivator-stats{margin-top:17px;padding:16px 9px}.cultivator-stats strong{font-size:18px}.cultivator-stats span{font-size:9px}.equipped-arts{grid-column:1/-1;padding:13px 0 16px;gap:20px}.equipped-arts>.eyebrow{font-size:8px;max-width:none}.art-mini{width:40px;height:40px}.equipped-arts>div{gap:9px}.next-step{padding:16px;gap:12px;margin-top:19px}.next-step strong{font-size:16px}.next-step>div>span:last-child{font-size:10px}.next-step>.text-button{font-size:10px;min-height:40px}.lower-grid{grid-template-columns:1fr;margin-top:25px}.section-heading h2{font-size:24px}.section-heading .eyebrow{font-size:7px}.region-grid{grid-template-columns:1fr;gap:15px}.region-art,.region-card.copper .region-art,.region-card.indigo .region-art{height:160px}.region-difficulty{font-size:9px;left:13px;top:13px;padding:6px 8px}.region-difficulty>svg{width:9px;height:9px}.region-art-label{font-size:7px;left:15px;bottom:14px}.region-card-body{padding:16px}.region-card h3{font-size:22px;white-space:normal}.region-card h3 svg{display:block;width:16px;height:16px}.region-rewards{gap:20px;margin-top:13px}.region-rewards>span{font-size:11px}.region-rewards svg{width:13px;height:13px}.region-illustration>svg{width:38px;height:38px}.milestone-grid{gap:10px}.milestone{padding:15px}.milestone strong{font-size:12px}.milestone>div>span{font-size:10px}.milestone-state{font-size:10px}.loadout-banner{padding:23px 19px;gap:19px}.loadout-banner .large-icon{width:60px;height:60px;outline-offset:3px}.large-icon .treasure-art{width:55px;height:55px}.loadout-banner h2{font-size:23px}.loadout-banner p{font-size:11px}.technique-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.technique-card{padding:15px}.technique-top{float:none;min-height:140px;margin:-15px -15px 17px;padding:18px;flex-direction:row}.technique-top::before{width:91px;height:91px;top:25px}.technique-icon{width:103px;height:103px}.technique-icon .treasure-art{width:103px;height:103px}.element-tag{font-size:7px;left:9px;top:10px;padding:4px 6px}.technique-equipped-seal{font-size:5px;right:8px;top:11px;padding:5px 3px}.technique-card>.eyebrow{font-size:6px;letter-spacing:1px}.technique-card h2{font-size:19px;line-height:1.25;min-height:48px}.technique-card p{font-size:10px;line-height:1.7;min-height:85px;margin-top:9px}.technique-effect{font-size:8px;margin:15px 0;min-height:37px;gap:5px}.technique-effect>span{font-size:7px;width:100%}.technique-effect>svg{width:10px;height:10px}.technique-card>.button{font-size:9px;white-space:normal;min-height:44px;padding:10px 7px;gap:5px}.technique-card>.button>svg{width:12px;height:12px}.item-art{min-height:240px}.sword-art>.treasure-art{width:185px;height:185px}.item-content{padding:24px}.item-content h2{font-size:27px}.item-content p{font-size:12px}.pill-card{padding:21px}.pill-card>.pill-icon{width:60px;height:60px}.pill-card>.pill-icon .treasure-art{width:58px;height:58px}.pill-card p{font-size:11px}.pill-card h2{font-size:20px}.owned-count{font-size:10px}.abode-hero{min-height:240px;padding:25px}.assignment-icon{grid-row:1/4}.assignment-card{grid-template-columns:60px 1fr;gap:0 16px;padding:22px}.assignment-card h2{font-size:22px}.assignment-card p{font-size:11px}.assignment-status{font-size:10px}.pet-card{display:flex;flex-direction:row;padding:23px 19px;gap:9px;align-items:center}.pet-portrait{width:105px;height:145px;margin:0 0 0 -10px}.pet-portrait>.beast-art{width:125px;height:145px;background-size:200% 200%;}.pet-card h2{font-size:25px}.pet-card p{font-size:11px}.pet-card>.pet-portrait+div{flex:1}.pet-card .button{font-size:10px;min-height:44px}.furnace-banner{padding:25px 20px;gap:17px}.furnace-illustration{width:66px;height:90px}.furnace-illustration>.treasure-art{width:85px;height:85px}.furnace-banner h2{font-size:25px}.furnace-banner p{font-size:11px}.recipe-grid{grid-template-columns:1fr}.recipe-card{padding:24px}.recipe-heading{float:right;min-height:85px;gap:10px}.recipe-card .pill-icon{width:75px;height:75px}.recipe-card .pill-icon .treasure-art{width:73px;height:73px}.recipe-card h2{font-size:25px;max-width:220px}.recipe-card p{font-size:12px;min-height:48px}.recipe-owned{font-size:10px}.battle-title{padding:18px 15px}.battle-title h2{font-size:22px;line-height:1.2}.battle-title>div>.eyebrow{font-size:5px;letter-spacing:1px}.toggle-auto{font-size:9px;padding:7px 9px}.battle-arena,.battle-arena.trial-arena{height:370px;background-position:center}.battle-nameplate{top:17px;width:41%;padding:11px 10px;border-radius:3px}.player-nameplate{left:4%}.enemy-nameplate{right:4%}.battle-nameplate strong{font-size:17px}.fighter-tag{font-size:5px!important;letter-spacing:.7px;margin-bottom:6px!important}.battle-nameplate>span:last-child{font-size:8px}.health-track{height:5px;margin-top:8px}.battle-message{font-size:9px;bottom:14px;left:6%;right:6%;padding:10px}.encounter-beads{top:125px;gap:9px}.encounter-beads>span{width:6px;height:6px}.battle-controls{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;padding:13px}.battle-skill{min-height:119px;padding:10px 6px}.battle-skill>.treasure-art{width:54px;height:54px}.battle-skill strong{font-size:11px;line-height:1.3}.battle-skill>span:not(.treasure-art){font-size:7px;line-height:1.4}.cooldown-counter{font-size:16px;right:7px;top:7px}.result-loot{gap:10px}.result-loot>span{min-width:80px;padding:13px 8px}.result-illustration{width:165px;height:165px}.result-illustration>.treasure-art{width:140px;height:140px}.result-title{font-size:27px}.game-dialog{padding:23px}.scene-cultivator-caption,.scene-realm-label,.scene-power{pointer-events:none}.region-modal-art{height:175px}.character-summary .cultivator-portrait{width:145px;height:175px}.mobile-nav-item{font-size:9px}.mobile-nav-item>svg{width:21px;height:21px}.page-footer{font-size:8px}.resource{padding:0 7px;min-width:40px;font-size:10px}}
+@media(max-width:380px){.scene-realm-label h2{font-size:23px}.scene-realm-label p{font-size:9px;max-width:120px}.scene-cultivator-caption{left:66%}.cultivator-title{font-size:20px}.scene-shortcuts{left:14px}.resource{padding:0 5px;min-width:37px;font-size:9px}.cultivator-card{column-gap:13px;padding-left:15px;padding-right:15px}.name-button{font-size:18px}.realm-info h2{font-size:15px}.qi-heading{font-size:7px}.technique-grid{gap:10px}.technique-card{padding:13px}.technique-top{margin:-13px -13px 16px}.technique-card h2{font-size:17px}.technique-card p{font-size:10px;min-height:100px}.technique-card .button{font-size:8px}.pet-card{flex-direction:column}.pet-portrait{height:140px;width:160px}.pet-portrait>.beast-art{width:160px;height:160px}.result-loot>span{min-width:72px}.scene-power{right:53px}.loadout-banner{gap:15px}}

@@ -2,7 +2,7 @@
 
 **Direction:** painted mountain fantasy with warm parchment interfaces, ink-blue distance, muted jade actions and copper accents. Quiet sophistication at the sanctuary; clear silhouettes and stronger elemental feedback in combat.
 
-The interface uses system sans-serif for small controls and Georgia for expressive titles. No runtime font download is required. Icons are from the Lucide package (ISC license). The original mountain sanctuary is generated with the built-in ImageGen tool. Phaser draws the animated particles and original combat figures procedurally.
+The interface uses system sans-serif for small controls and Georgia for expressive titles. No runtime font download is required. Icons are from the Lucide package (ISC license). Original painted art is generated with the built-in ImageGen tool. Phaser animates the illustrated actors and renders particles, sword arcs, elemental impacts, and damage text.
 
 Saved generated asset: `public/assets/jade-peak.png`. The exact source image is copied into the project; the game does not reference a tool output directory or a remote image URL. Generation used the built-in tool, not a CLI or a runtime image-generation API.
 
@@ -14,11 +14,25 @@ Use case: stylized-concept. Asset type: wide landscape illustration for the play
 
 Buttons subtly scale to 0.96 on press, with explicit color/opacity transitions. The layout uses paper surfaces, fine divisions, tabular resource numbers and large touch-friendly navigation. Motion reduction stills the scene and suppresses UI transitions. Sound is optional and synthesized locally with Web Audio.
 
+## v0.2 — Spirit awakening
+
+The reference games informed the large central cultivator, ornate item frames, illustrated techniques, realm reveal, and compact mobile navigation. Overmortal was the primary visual reference. Reference imagery was viewed for direction only; no reference-game image, icon, logo, UI screenshot, or code is included in the game.
+
+All six new assets below were generated with the built-in ImageGen tool, visually inspected, and copied into `public/assets/`. The exact prompts are preserved in `visual-assets-v02.json`.
+
+| Asset | Use |
+|---|---|
+| `cultivator.png` | Full-body protagonist, portrait, and breakthrough reveal |
+| `spirit-beasts.png` | Transparent 2×2 atlas: cloud fox, ember wolf, moon spirit, heart demon |
+| `bamboo-forest.png` | Whispering Bamboo destination card and battle arena |
+| `crimson-ridge.png` | Crimson Ridge destination card and battle arena |
+| `moonlit-ruins.png` | Moonlit Ruins destination card and battle arena |
+| `treasures.png` | Transparent 3×3 atlas: six elemental arts, scroll, pill bottle, jade crystal |
+
+The illustrated actors have floating idle motion, attack movement, arrival fades, and effects. They use a single painted pose per actor, rather than skeletal or frame-by-frame character animation. Reduced motion stops scene drift, impacts and camera shake while retaining static damage feedback. All artwork is bundled and cached locally for offline use; the complete original PNG art collection is approximately 20 MB.
+
 ## Future asset priorities
 
-1. Distinct full artwork for each region; current cards intentionally crop and tint the sanctuary art.
-2. Animated protagonist, spirit beasts and guardians with consistent scale and silhouettes.
-3. Companion portraits, artifact illustrations and realm-specific trial environments.
-4. Original event illustrations, commissioned music and richer effects after the core loop is validated.
-
-Do not imply cropped background variants represent finished unique region art. The first build establishes the direction; later content needs its own production pass.
+1. Skeletal character animation and additional weapon/robe appearances.
+2. Companion portraits, named guardians and realm-specific trial environments.
+3. Original event illustrations, commissioned music and more distinctive effects for each technique.
