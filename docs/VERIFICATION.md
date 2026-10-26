@@ -1,5 +1,14 @@
 # Build verification
 
+## v0.2.2 — Item catalog
+
+- Defined 49 unique items across six tiers, item levels 1–60, with valid tier-level ranges and positive numeric stats/effects.
+- Five definitions match current chapter items; 44 are marked as planned. The catalog does not alter progression, equipment or save data.
+- Search and tier/category/availability filters update the result list without recreating the input controls.
+- The CSV is bundled with the offline build; simple icons reuse the existing Lucide package, with no remote art or font requests.
+- TypeScript/Vite build and the existing 25 game/save tests pass. Browser checks cover combined filters, zero results and reset, the five-current-item view, level-60 material, and a CSV download matching the bundled file byte-for-byte.
+- Desktop 1440 × 1000 and phone 390 × 844 layouts inspected; mobile document width matches its viewport content width.
+
 ## v0.2.1 — Label contrast and portrait correction
 
 - Replaced the full-body avatar crop with a dedicated portrait in the profile card and character dialog.

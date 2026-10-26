@@ -1,0 +1,763 @@
+{
+  "version": "0.2.2",
+  "note": "Item levels are catalog grades, not equip requirements. Planned items and their stats are design definitions; they do not change current gameplay.",
+  "tiers": [
+    {
+      "id": "common",
+      "name": "Common",
+      "minLevel": 1,
+      "maxLevel": 4,
+      "color": "#5c6757"
+    },
+    {
+      "id": "uncommon",
+      "name": "Uncommon",
+      "minLevel": 5,
+      "maxLevel": 9,
+      "color": "#2f6b43"
+    },
+    {
+      "id": "rare",
+      "name": "Rare",
+      "minLevel": 10,
+      "maxLevel": 19,
+      "color": "#285d91"
+    },
+    {
+      "id": "epic",
+      "name": "Epic",
+      "minLevel": 20,
+      "maxLevel": 34,
+      "color": "#784395"
+    },
+    {
+      "id": "legendary",
+      "name": "Legendary",
+      "minLevel": 35,
+      "maxLevel": 49,
+      "color": "#946015"
+    },
+    {
+      "id": "immortal",
+      "name": "Immortal",
+      "minLevel": 50,
+      "maxLevel": 60,
+      "color": "#9b3b33"
+    }
+  ],
+  "items": [
+    {
+      "id": "linen-training-robe",
+      "name": "Linen Training Robe",
+      "tier": "common",
+      "level": 1,
+      "category": "equipment",
+      "slot": "Robe",
+      "stats": {
+        "vitality": 20,
+        "defense": 1
+      },
+      "effect": "Protective clothing for a durable combat build.",
+      "source": "Planned: tier-matched expedition loot and crafting",
+      "available": false
+    },
+    {
+      "id": "weathered-iron-sword",
+      "name": "Weathered Iron Sword",
+      "tier": "common",
+      "level": 1,
+      "category": "equipment",
+      "slot": "Sword",
+      "stats": {
+        "attack": 4
+      },
+      "effect": "A sword for direct attacks and sword techniques.",
+      "source": "Planned: tier-matched expedition loot and crafting",
+      "available": false
+    },
+    {
+      "id": "bronze-hair-crown",
+      "name": "Bronze Hair Crown",
+      "tier": "common",
+      "level": 2,
+      "category": "equipment",
+      "slot": "Crown",
+      "stats": {
+        "vitality": 10,
+        "cultivationRate": 1
+      },
+      "effect": "A cultivation crown for vitality and Qi gathering.",
+      "source": "Planned: tier-matched expedition loot and crafting",
+      "available": false
+    },
+    {
+      "id": "copper-focus-ring",
+      "name": "Copper Focus Ring",
+      "tier": "common",
+      "level": 2,
+      "category": "equipment",
+      "slot": "Ring",
+      "stats": {
+        "attack": 2,
+        "critChance": 0.5
+      },
+      "effect": "An offensive accessory for a critical-strike build.",
+      "source": "Planned: tier-matched expedition loot and crafting",
+      "available": false
+    },
+    {
+      "id": "jade-dew-pill",
+      "name": "Jade Dew Pill",
+      "tier": "common",
+      "level": 2,
+      "category": "pills",
+      "slot": "Healing pill",
+      "stats": {
+        "healthRestore": 45
+      },
+      "effect": "Restores health during an expedition.",
+      "source": "Alchemy: 4 herbs + 12 stones",
+      "available": true
+    },
+    {
+      "id": "paper-qi-talisman",
+      "name": "Paper Qi Talisman",
+      "tier": "common",
+      "level": 3,
+      "category": "equipment",
+      "slot": "Talisman",
+      "stats": {
+        "cultivationRate": 2
+      },
+      "effect": "A seal for cultivation speed and spiritual protection.",
+      "source": "Planned: tier-matched expedition loot and crafting",
+      "available": false
+    },
+    {
+      "id": "pill-of-clear-insight",
+      "name": "Pill of Clear Insight",
+      "tier": "common",
+      "level": 3,
+      "category": "pills",
+      "slot": "Cultivation pill",
+      "stats": {
+        "qiGain": 90
+      },
+      "effect": "Grants Qi up to the current cultivation bottleneck.",
+      "source": "Alchemy: 6 herbs + 20 stones",
+      "available": true
+    },
+    {
+      "id": "iron-ore",
+      "name": "Iron Ore",
+      "tier": "common",
+      "level": 4,
+      "category": "materials",
+      "slot": "Ore",
+      "stats": {
+        "materialGrade": 1
+      },
+      "effect": "A crafting material for equipment refinement.",
+      "source": "Planned: tier-matched mining and expedition rewards",
+      "available": false
+    },
+    {
+      "id": "cloudveil-sword",
+      "name": "Cloudveil Sword",
+      "tier": "uncommon",
+      "level": 5,
+      "category": "equipment",
+      "slot": "Sword",
+      "stats": {
+        "attack": 12
+      },
+      "effect": "Refinement adds 5 attack per rank.",
+      "source": "Starting equipment",
+      "available": true
+    },
+    {
+      "id": "jade-thread-robe",
+      "name": "Jade Thread Robe",
+      "tier": "uncommon",
+      "level": 5,
+      "category": "equipment",
+      "slot": "Robe",
+      "stats": {
+        "vitality": 45,
+        "defense": 3
+      },
+      "effect": "Protective clothing for a durable combat build.",
+      "source": "Planned: tier-matched expedition loot and crafting",
+      "available": false
+    },
+    {
+      "id": "spirit-jade-crown",
+      "name": "Spirit Jade Crown",
+      "tier": "uncommon",
+      "level": 6,
+      "category": "equipment",
+      "slot": "Crown",
+      "stats": {
+        "vitality": 25,
+        "cultivationRate": 2
+      },
+      "effect": "A cultivation crown for vitality and Qi gathering.",
+      "source": "Planned: tier-matched expedition loot and crafting",
+      "available": false
+    },
+    {
+      "id": "verdant-spirit-ring",
+      "name": "Verdant Spirit Ring",
+      "tier": "uncommon",
+      "level": 6,
+      "category": "equipment",
+      "slot": "Ring",
+      "stats": {
+        "attack": 5,
+        "critChance": 1
+      },
+      "effect": "An offensive accessory for a critical-strike build.",
+      "source": "Planned: tier-matched expedition loot and crafting",
+      "available": false
+    },
+    {
+      "id": "bamboo-spirit-seal",
+      "name": "Bamboo Spirit Seal",
+      "tier": "uncommon",
+      "level": 7,
+      "category": "equipment",
+      "slot": "Talisman",
+      "stats": {
+        "cultivationRate": 4,
+        "defense": 1
+      },
+      "effect": "A seal for cultivation speed and spiritual protection.",
+      "source": "Planned: tier-matched expedition loot and crafting",
+      "available": false
+    },
+    {
+      "id": "greater-dew-pill",
+      "name": "Greater Dew Pill",
+      "tier": "uncommon",
+      "level": 7,
+      "category": "pills",
+      "slot": "Healing pill",
+      "stats": {
+        "healthRestore": 90
+      },
+      "effect": "Restores health during an expedition.",
+      "source": "Planned: tier-matched alchemy recipe",
+      "available": false
+    },
+    {
+      "id": "cloud-iron",
+      "name": "Cloud Iron",
+      "tier": "uncommon",
+      "level": 8,
+      "category": "materials",
+      "slot": "Ore",
+      "stats": {
+        "materialGrade": 2
+      },
+      "effect": "A crafting material for equipment refinement.",
+      "source": "Mining assignment and expedition rewards",
+      "available": true
+    },
+    {
+      "id": "spirit-clarity-pill",
+      "name": "Spirit Clarity Pill",
+      "tier": "uncommon",
+      "level": 8,
+      "category": "pills",
+      "slot": "Cultivation pill",
+      "stats": {
+        "qiGain": 180
+      },
+      "effect": "Grants Qi up to the current cultivation bottleneck.",
+      "source": "Planned: tier-matched alchemy recipe",
+      "available": false
+    },
+    {
+      "id": "foundation-pill",
+      "name": "Foundation Pill",
+      "tier": "uncommon",
+      "level": 9,
+      "category": "pills",
+      "slot": "Breakthrough pill",
+      "stats": {
+        "trialAccess": 1
+      },
+      "effect": "Opens one Foundation tribulation. Returned after a failed or abandoned trial.",
+      "source": "Alchemy: 12 herbs + 2 iron + 30 stones",
+      "available": true
+    },
+    {
+      "id": "bambooheart-blade",
+      "name": "Bambooheart Blade",
+      "tier": "rare",
+      "level": 10,
+      "category": "equipment",
+      "slot": "Sword",
+      "stats": {
+        "attack": 28,
+        "critChance": 2
+      },
+      "effect": "A sword for direct attacks and sword techniques.",
+      "source": "Planned: tier-matched expedition loot and crafting",
+      "available": false
+    },
+    {
+      "id": "mistweave-vestment",
+      "name": "Mistweave Vestment",
+      "tier": "rare",
+      "level": 11,
+      "category": "equipment",
+      "slot": "Robe",
+      "stats": {
+        "vitality": 90,
+        "defense": 6
+      },
+      "effect": "Protective clothing for a durable combat build.",
+      "source": "Planned: tier-matched expedition loot and crafting",
+      "available": false
+    },
+    {
+      "id": "moonlit-diadem",
+      "name": "Moonlit Diadem",
+      "tier": "rare",
+      "level": 12,
+      "category": "equipment",
+      "slot": "Crown",
+      "stats": {
+        "vitality": 50,
+        "cultivationRate": 4
+      },
+      "effect": "A cultivation crown for vitality and Qi gathering.",
+      "source": "Planned: tier-matched expedition loot and crafting",
+      "available": false
+    },
+    {
+      "id": "frostmoon-ring",
+      "name": "Frostmoon Ring",
+      "tier": "rare",
+      "level": 13,
+      "category": "equipment",
+      "slot": "Ring",
+      "stats": {
+        "attack": 10,
+        "critChance": 2
+      },
+      "effect": "An offensive accessory for a critical-strike build.",
+      "source": "Planned: tier-matched expedition loot and crafting",
+      "available": false
+    },
+    {
+      "id": "mountainward-seal",
+      "name": "Mountainward Seal",
+      "tier": "rare",
+      "level": 14,
+      "category": "equipment",
+      "slot": "Talisman",
+      "stats": {
+        "cultivationRate": 6,
+        "defense": 2
+      },
+      "effect": "A seal for cultivation speed and spiritual protection.",
+      "source": "Planned: tier-matched expedition loot and crafting",
+      "available": false
+    },
+    {
+      "id": "vital-spring-pill",
+      "name": "Vital Spring Pill",
+      "tier": "rare",
+      "level": 15,
+      "category": "pills",
+      "slot": "Healing pill",
+      "stats": {
+        "healthRestore": 180
+      },
+      "effect": "Restores health during an expedition.",
+      "source": "Planned: tier-matched alchemy recipe",
+      "available": false
+    },
+    {
+      "id": "jade-marrow-pill",
+      "name": "Jade Marrow Pill",
+      "tier": "rare",
+      "level": 16,
+      "category": "pills",
+      "slot": "Cultivation pill",
+      "stats": {
+        "qiGain": 420
+      },
+      "effect": "Grants Qi up to the current cultivation bottleneck.",
+      "source": "Planned: tier-matched alchemy recipe",
+      "available": false
+    },
+    {
+      "id": "moonsteel-ore",
+      "name": "Moonsteel Ore",
+      "tier": "rare",
+      "level": 18,
+      "category": "materials",
+      "slot": "Ore",
+      "stats": {
+        "materialGrade": 3
+      },
+      "effect": "A crafting material for equipment refinement.",
+      "source": "Planned: tier-matched mining and expedition rewards",
+      "available": false
+    },
+    {
+      "id": "scarlet-star-sword",
+      "name": "Scarlet Star Sword",
+      "tier": "epic",
+      "level": 20,
+      "category": "equipment",
+      "slot": "Sword",
+      "stats": {
+        "attack": 55,
+        "critChance": 3
+      },
+      "effect": "A sword for direct attacks and sword techniques.",
+      "source": "Planned: tier-matched expedition loot and crafting",
+      "available": false
+    },
+    {
+      "id": "crimson-phoenix-robe",
+      "name": "Crimson Phoenix Robe",
+      "tier": "epic",
+      "level": 21,
+      "category": "equipment",
+      "slot": "Robe",
+      "stats": {
+        "vitality": 170,
+        "defense": 12
+      },
+      "effect": "Protective clothing for a durable combat build.",
+      "source": "Planned: tier-matched expedition loot and crafting",
+      "available": false
+    },
+    {
+      "id": "thundercrest-crown",
+      "name": "Thundercrest Crown",
+      "tier": "epic",
+      "level": 22,
+      "category": "equipment",
+      "slot": "Crown",
+      "stats": {
+        "vitality": 95,
+        "cultivationRate": 6
+      },
+      "effect": "A cultivation crown for vitality and Qi gathering.",
+      "source": "Planned: tier-matched expedition loot and crafting",
+      "available": false
+    },
+    {
+      "id": "emberheart-ring",
+      "name": "Emberheart Ring",
+      "tier": "epic",
+      "level": 23,
+      "category": "equipment",
+      "slot": "Ring",
+      "stats": {
+        "attack": 18,
+        "critChance": 3
+      },
+      "effect": "An offensive accessory for a critical-strike build.",
+      "source": "Planned: tier-matched expedition loot and crafting",
+      "available": false
+    },
+    {
+      "id": "stormcaller-talisman",
+      "name": "Stormcaller Talisman",
+      "tier": "epic",
+      "level": 24,
+      "category": "equipment",
+      "slot": "Talisman",
+      "stats": {
+        "cultivationRate": 10,
+        "defense": 4
+      },
+      "effect": "A seal for cultivation speed and spiritual protection.",
+      "source": "Planned: tier-matched expedition loot and crafting",
+      "available": false
+    },
+    {
+      "id": "phoenix-blood-pill",
+      "name": "Phoenix Blood Pill",
+      "tier": "epic",
+      "level": 25,
+      "category": "pills",
+      "slot": "Healing pill",
+      "stats": {
+        "healthRestore": 360
+      },
+      "effect": "Restores health during an expedition.",
+      "source": "Planned: tier-matched alchemy recipe",
+      "available": false
+    },
+    {
+      "id": "golden-lotus-pill",
+      "name": "Golden Lotus Pill",
+      "tier": "epic",
+      "level": 26,
+      "category": "pills",
+      "slot": "Cultivation pill",
+      "stats": {
+        "qiGain": 900
+      },
+      "effect": "Grants Qi up to the current cultivation bottleneck.",
+      "source": "Planned: tier-matched alchemy recipe",
+      "available": false
+    },
+    {
+      "id": "crimson-spirit-ore",
+      "name": "Crimson Spirit Ore",
+      "tier": "epic",
+      "level": 29,
+      "category": "materials",
+      "slot": "Ore",
+      "stats": {
+        "materialGrade": 4
+      },
+      "effect": "A crafting material for equipment refinement.",
+      "source": "Planned: tier-matched mining and expedition rewards",
+      "available": false
+    },
+    {
+      "id": "moonbreaker-sword",
+      "name": "Moonbreaker Sword",
+      "tier": "legendary",
+      "level": 35,
+      "category": "equipment",
+      "slot": "Sword",
+      "stats": {
+        "attack": 100,
+        "critChance": 5
+      },
+      "effect": "A sword for direct attacks and sword techniques.",
+      "source": "Planned: tier-matched expedition loot and crafting",
+      "available": false
+    },
+    {
+      "id": "starwoven-mantle",
+      "name": "Starwoven Mantle",
+      "tier": "legendary",
+      "level": 36,
+      "category": "equipment",
+      "slot": "Robe",
+      "stats": {
+        "vitality": 300,
+        "defense": 22
+      },
+      "effect": "Protective clothing for a durable combat build.",
+      "source": "Planned: tier-matched expedition loot and crafting",
+      "available": false
+    },
+    {
+      "id": "celestial-lotus-crown",
+      "name": "Celestial Lotus Crown",
+      "tier": "legendary",
+      "level": 37,
+      "category": "equipment",
+      "slot": "Crown",
+      "stats": {
+        "vitality": 170,
+        "cultivationRate": 9
+      },
+      "effect": "A cultivation crown for vitality and Qi gathering.",
+      "source": "Planned: tier-matched expedition loot and crafting",
+      "available": false
+    },
+    {
+      "id": "voidwalker-ring",
+      "name": "Voidwalker Ring",
+      "tier": "legendary",
+      "level": 38,
+      "category": "equipment",
+      "slot": "Ring",
+      "stats": {
+        "attack": 32,
+        "critChance": 5
+      },
+      "effect": "An offensive accessory for a critical-strike build.",
+      "source": "Planned: tier-matched expedition loot and crafting",
+      "available": false
+    },
+    {
+      "id": "sun-and-moon-seal",
+      "name": "Sun-and-Moon Seal",
+      "tier": "legendary",
+      "level": 39,
+      "category": "equipment",
+      "slot": "Talisman",
+      "stats": {
+        "cultivationRate": 15,
+        "defense": 7
+      },
+      "effect": "A seal for cultivation speed and spiritual protection.",
+      "source": "Planned: tier-matched expedition loot and crafting",
+      "available": false
+    },
+    {
+      "id": "ninefold-renewal-pill",
+      "name": "Ninefold Renewal Pill",
+      "tier": "legendary",
+      "level": 40,
+      "category": "pills",
+      "slot": "Healing pill",
+      "stats": {
+        "healthRestore": 700
+      },
+      "effect": "Restores health during an expedition.",
+      "source": "Planned: tier-matched alchemy recipe",
+      "available": false
+    },
+    {
+      "id": "celestial-wisdom-pill",
+      "name": "Celestial Wisdom Pill",
+      "tier": "legendary",
+      "level": 41,
+      "category": "pills",
+      "slot": "Cultivation pill",
+      "stats": {
+        "qiGain": 1800
+      },
+      "effect": "Grants Qi up to the current cultivation bottleneck.",
+      "source": "Planned: tier-matched alchemy recipe",
+      "available": false
+    },
+    {
+      "id": "starfall-adamant",
+      "name": "Starfall Adamant",
+      "tier": "legendary",
+      "level": 44,
+      "category": "materials",
+      "slot": "Ore",
+      "stats": {
+        "materialGrade": 5
+      },
+      "effect": "A crafting material for equipment refinement.",
+      "source": "Planned: tier-matched mining and expedition rewards",
+      "available": false
+    },
+    {
+      "id": "nine-heavens-sword",
+      "name": "Nine Heavens Sword",
+      "tier": "immortal",
+      "level": 50,
+      "category": "equipment",
+      "slot": "Sword",
+      "stats": {
+        "attack": 170,
+        "critChance": 8
+      },
+      "effect": "A sword for direct attacks and sword techniques.",
+      "source": "Planned: tier-matched expedition loot and crafting",
+      "available": false
+    },
+    {
+      "id": "heavenly-dao-robe",
+      "name": "Heavenly Dao Robe",
+      "tier": "immortal",
+      "level": 51,
+      "category": "equipment",
+      "slot": "Robe",
+      "stats": {
+        "vitality": 520,
+        "defense": 38
+      },
+      "effect": "Protective clothing for a durable combat build.",
+      "source": "Planned: tier-matched expedition loot and crafting",
+      "available": false
+    },
+    {
+      "id": "crown-of-the-first-immortal",
+      "name": "Crown of the First Immortal",
+      "tier": "immortal",
+      "level": 52,
+      "category": "equipment",
+      "slot": "Crown",
+      "stats": {
+        "vitality": 280,
+        "cultivationRate": 12
+      },
+      "effect": "A cultivation crown for vitality and Qi gathering.",
+      "source": "Planned: tier-matched expedition loot and crafting",
+      "available": false
+    },
+    {
+      "id": "ring-of-endless-heavens",
+      "name": "Ring of Endless Heavens",
+      "tier": "immortal",
+      "level": 53,
+      "category": "equipment",
+      "slot": "Ring",
+      "stats": {
+        "attack": 55,
+        "critChance": 7
+      },
+      "effect": "An offensive accessory for a critical-strike build.",
+      "source": "Planned: tier-matched expedition loot and crafting",
+      "available": false
+    },
+    {
+      "id": "origin-dao-talisman",
+      "name": "Origin Dao Talisman",
+      "tier": "immortal",
+      "level": 54,
+      "category": "equipment",
+      "slot": "Talisman",
+      "stats": {
+        "cultivationRate": 22,
+        "defense": 12
+      },
+      "effect": "A seal for cultivation speed and spiritual protection.",
+      "source": "Planned: tier-matched expedition loot and crafting",
+      "available": false
+    },
+    {
+      "id": "immortal-rebirth-pill",
+      "name": "Immortal Rebirth Pill",
+      "tier": "immortal",
+      "level": 55,
+      "category": "pills",
+      "slot": "Healing pill",
+      "stats": {
+        "healthRestore": 1200
+      },
+      "effect": "Restores health during an expedition.",
+      "source": "Planned: tier-matched alchemy recipe",
+      "available": false
+    },
+    {
+      "id": "pill-of-boundless-dao",
+      "name": "Pill of Boundless Dao",
+      "tier": "immortal",
+      "level": 56,
+      "category": "pills",
+      "slot": "Cultivation pill",
+      "stats": {
+        "qiGain": 3600
+      },
+      "effect": "Grants Qi up to the current cultivation bottleneck.",
+      "source": "Planned: tier-matched alchemy recipe",
+      "available": false
+    },
+    {
+      "id": "primordial-immortal-ore",
+      "name": "Primordial Immortal Ore",
+      "tier": "immortal",
+      "level": 60,
+      "category": "materials",
+      "slot": "Ore",
+      "stats": {
+        "materialGrade": 6
+      },
+      "effect": "A crafting material for equipment refinement.",
+      "source": "Planned: tier-matched mining and expedition rewards",
+      "available": false
+    }
+  ]
+}

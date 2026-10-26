@@ -2,6 +2,8 @@ import './style.css';
 import './touch.css';
 import './rpg.css';
 import './readability.css';
+import './item-catalog.css';
+import { renderItemCatalog, renderCatalogResults, emptyCatalogFilters } from './item-catalog';
 import { renderSanctuary, renderRegionCard, renderTechniques, renderInventory, renderAbode, renderAlchemy, renderBattle } from './presentation';
 import { treasure } from './art';
 import { createIcons, icons } from 'lucide';
@@ -16,6 +18,7 @@ type Page = 'sanctuary' | 'world' | 'techniques' | 'inventory' | 'abode' | 'alch
 let state: GameState;
 let page: Page = 'sanctuary';
 let inventoryFilter = 'all';
+let catalogFilters = emptyCatalogFilters();
 let disposeScene: (() => void) | undefined;
 let saveStatus = 'Saving your journey';
 let offlineReady = false;
@@ -56,7 +59,7 @@ function render() {
       <div class="sidebar-group"><span class="eyebrow">THE INNER WORLD</span>${nav.slice(4).map(n => navButton(n)).join('')}</div>
       <div class="sidebar-bottom"><div class="chapter-note"><span class="chapter-symbol">${icon('mountain-snow')}</span><span>CHAPTER ONE<strong>Where clouds begin</strong></span></div>
       <button class="nav-item" data-modal="journal">${icon('book-open')}<span>Journey journal</span><span class="journal-count">${state.journal.length}</span></button>
-      <button class="nav-item" data-modal="settings">${icon('settings-2')}<span>Settings & saves</span></button><div class="build-note">NINE HEAVENS <span>v0.2.1 · Spirit awakening</span></div></div>
+      <button class="nav-item" data-modal="settings">${icon('settings-2')}<span>Settings & saves</span></button><div class="build-note">NINE HEAVENS <span>v0.2.2 · Spirit awakening</span></div></div>
     </aside>
     <main class="main"><div class="page-heading"><div><div class="breadcrumb">YOUR JOURNEY <span>/</span> ${nav.find(n => n.id === page)!.name.toUpperCase()}</div><h1>${page === 'sanctuary' ? 'The path to immortality' : nav.find(n => n.id === page)!.subtitle}</h1><p>${pageDescription()}</p></div><div class="world-time">${icon('sun')}<span>YEAR 1 <b>·</b> EARLY SPRING<small>Day ${state.campaignDay} · Jade Peak</small></span></div></div>
     ${pageContent()}
@@ -92,7 +95,7 @@ function worldPage() {
   return `<section class="world-map panel"><div class="map-intro"><span class="eyebrow">THE LOWER HEAVENS</span><h2>A world beyond the mist</h2><p>Follow the old roads.<br>See what the clouds have kept.</p></div><svg class="map-paths" viewBox="0 0 1000 400" aria-hidden="true"><path d="M200 295 Q320 330 410 220 T650 170 T840 90"/><path d="M410 220 Q450 100 570 80"/></svg><button class="map-node home-node" style="--x:20%;--y:73%" data-page="sanctuary"><span>${icon('house')}</span><strong>Jade Peak</strong><small>Your sanctuary</small></button>${REGIONS.map((r, i) => `<button class="map-node ${state.realm < r.realm ? 'locked' : ''}" style="--x:${[43, 65, 84][i]}%;--y:${[55, 43, 24][i]}%" data-region="${r.id}"><span>${icon(state.realm < r.realm ? 'lock-keyhole' : r.icon)}</span><strong>${r.name}</strong><small>${state.realm < r.realm ? 'Foundation required' : `Power ${r.recommended} recommended`}</small></button>`).join('')}<div class="map-caption">${icon('compass')} The world unfolds with your cultivation.</div></section><div class="section-heading"><h2>Choose your next journey</h2><span class="subtle">Your combat power <b>${power(state)}</b></span></div><div class="world-region-grid">${REGIONS.map(r => `<div class="world-region">${regionCard(r)}<p>${r.description}</p><button class="button secondary full-width" data-region="${r.id}">${state.realm < r.realm ? 'Discover this region' : 'Prepare expedition'} ${icon('arrow-right')}</button></div>`).join('')}</div><div class="notice">${icon('shield-check')} Exploration is safe to leave. Expeditions pause when you close the game, and defeat never takes your possessions.</div>`;
 }
 function techniquesPage() { return renderTechniques(state); }
-function inventoryPage() { return renderInventory(state, inventoryFilter); }
+function inventoryPage() { return inventoryFilter === 'catalog' ? renderItemCatalog(catalogFilters) : renderInventory(state, inventoryFilter); }
 function abodePage() { return renderAbode(state); }
 function alchemyPage() { return renderAlchemy(state); }
 function sectPage() {
@@ -160,7 +163,7 @@ function showOffline(report: OfflineReport) {
   d.querySelector('#continue-journey')!.addEventListener('click', () => d.close());
 }
 function openSettings() {
-  const d = modal('A little peace of mind', `<p class="dialog-intro">Your journey belongs to you. Keep a copy somewhere safe.</p><div class="settings-row"><span>${icon('volume-2')}<span><strong>Gentle sound effects</strong><small>Plucked notes for actions and breakthroughs</small></span></span><button class="switch ${state.settings.sound ? 'on' : ''}" role="switch" aria-label="Sound effects" aria-checked="${state.settings.sound}" data-pref="sound"><span></span></button></div><div class="settings-row"><span>${icon('wind')}<span><strong>Reduced motion</strong><small>Still the particles and soften transitions</small></span></span><button class="switch ${state.settings.reducedMotion ? 'on' : ''}" role="switch" aria-label="Reduced motion" aria-checked="${state.settings.reducedMotion}" data-pref="reducedMotion"><span></span></button></div><div class="save-tools"><button class="button secondary" id="export-save">${icon('download')} Export save</button><button class="button secondary" id="import-save">${icon('upload')} Import save</button></div><input id="save-file" type="file" accept=".json,application/json" hidden><button class="text-button" id="protect-save">${icon('shield-check')} Request persistent browser storage</button><p class="dialog-footnote">Browser saves are local to this browser and address. Clearing site data can remove them. Export to transfer your journey between PC and mobile.</p><div class="about-build"><strong>NINE HEAVENS</strong><span>v0.2.1 · Spirit awakening</span><p>Built for single-player, offline cultivation. This chapter includes three realms, three regions, six arts, alchemy, a spirit companion, and Azure Cloud membership.</p></div>`);
+  const d = modal('A little peace of mind', `<p class="dialog-intro">Your journey belongs to you. Keep a copy somewhere safe.</p><div class="settings-row"><span>${icon('volume-2')}<span><strong>Gentle sound effects</strong><small>Plucked notes for actions and breakthroughs</small></span></span><button class="switch ${state.settings.sound ? 'on' : ''}" role="switch" aria-label="Sound effects" aria-checked="${state.settings.sound}" data-pref="sound"><span></span></button></div><div class="settings-row"><span>${icon('wind')}<span><strong>Reduced motion</strong><small>Still the particles and soften transitions</small></span></span><button class="switch ${state.settings.reducedMotion ? 'on' : ''}" role="switch" aria-label="Reduced motion" aria-checked="${state.settings.reducedMotion}" data-pref="reducedMotion"><span></span></button></div><div class="save-tools"><button class="button secondary" id="export-save">${icon('download')} Export save</button><button class="button secondary" id="import-save">${icon('upload')} Import save</button></div><input id="save-file" type="file" accept=".json,application/json" hidden><button class="text-button" id="protect-save">${icon('shield-check')} Request persistent browser storage</button><p class="dialog-footnote">Browser saves are local to this browser and address. Clearing site data can remove them. Export to transfer your journey between PC and mobile.</p><div class="about-build"><strong>NINE HEAVENS</strong><span>v0.2.2 · Spirit awakening</span><p>Built for single-player, offline cultivation. This chapter includes three realms, three regions, six arts, alchemy, a spirit companion, and Azure Cloud membership.</p></div>`);
   d.querySelectorAll<HTMLButtonElement>('[data-pref]').forEach(button => button.onclick = () => {
     const key = button.dataset.pref as 'sound' | 'reducedMotion'; dispatch({ type: 'setting', key, value: !state.settings[key] }, true); button.classList.toggle('on', state.settings[key]); button.setAttribute('aria-checked', String(state.settings[key]));
   });
@@ -194,6 +197,7 @@ document.addEventListener('click', e => {
   if (button.dataset.region) return regionModal(button.dataset.region);
   if (button.dataset.resource) { inventoryFilter = 'materials'; return navigate('inventory'); }
   if (button.dataset.filter) { inventoryFilter = button.dataset.filter; return render(); }
+  if (button.hasAttribute('data-catalog-reset')) { catalogFilters = emptyCatalogFilters(); return render(); }
   const action = button.dataset.action;
   if (!action) return;
   switch (action) {
@@ -212,6 +216,25 @@ document.addEventListener('click', e => {
     case 'sect': return dispatch({ type: 'sect' });
     case 'pet': return dispatch({ type: 'pet' });
   }
+});
+function refreshCatalog() {
+  const results = document.getElementById('catalog-results');
+  if (!results) return;
+  results.innerHTML = renderCatalogResults(catalogFilters);
+  createIcons({ icons, attrs: { 'stroke-width': 1.65 } });
+}
+document.addEventListener('input', e => {
+  const input = e.target as HTMLInputElement;
+  if (input.id !== 'catalog-search') return;
+  catalogFilters.query = input.value; refreshCatalog();
+});
+document.addEventListener('change', e => {
+  const select = e.target as HTMLSelectElement;
+  if (select.id === 'catalog-tier') catalogFilters.tier = select.value;
+  else if (select.id === 'catalog-category') catalogFilters.category = select.value;
+  else if (select.id === 'catalog-availability') catalogFilters.availability = select.value;
+  else return;
+  refreshCatalog();
 });
 document.addEventListener('keydown', e => { if (!state || document.querySelector('dialog[open]') || ['INPUT', 'TEXTAREA', 'SELECT'].includes((e.target as Element).tagName) || e.ctrlKey || e.metaKey || e.altKey) return; if (e.key.toLowerCase() === 'f' && page === 'sanctuary' && !state.battle) { e.preventDefault(); dispatch({ type: 'focus' }, true); } });
 
