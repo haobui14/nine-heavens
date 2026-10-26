@@ -1,0 +1,122 @@
+.game-icon { display:inline-block; flex-shrink:0; vertical-align:middle; pointer-events:none; stroke:none; fill:none; }
+.game-icon--painted { min-width:18px; min-height:18px; overflow:hidden; filter:drop-shadow(0 1px 1px #13251d26); }
+.game-icon--utility { min-width:14px; min-height:14px; overflow:visible; }
+.game-icon--utility path,.game-icon--utility circle { stroke:none; }
+.game-icon--portrait { overflow:hidden; border-radius:50%; }
+.sidebar { overflow-y:auto; overscroll-behavior:contain; scrollbar-width:thin; scrollbar-color:#b6af88 transparent; }
+.sidebar-group,.sidebar-bottom { flex-shrink:0; }
+.treasure-art { display:inline-flex; align-items:center; justify-content:center; background-image:none; }
+.treasure-art>.game-icon { width:100%; height:100%; min-width:0; min-height:0; }
+.sidebar .nav-item { min-height:54px; gap:12px; color:#536348; }
+.sidebar .nav-item>.game-icon--painted {
+  width:36px; height:36px; padding:1px; border-radius:8px; border:1px solid #b6a475;
+  background:radial-gradient(ellipse at 40% 25%,#fffcf1,#e1d6b5);
+  box-shadow:inset 0 1px 0 #fff9e7,0 2px 3px #493b1e18;
+  transition:filter 150ms,opacity 150ms;
+}
+.sidebar .nav-item:hover>.game-icon { filter:drop-shadow(0 1px 3px #315a333d); }
+.sidebar .nav-item.active>.game-icon--painted { border-color:#8b9c5e; background:radial-gradient(#faf5ce,#ced9af); box-shadow:inset 0 0 0 2px #f3edc188,0 0 8px #8e9b4e30; }
+.nav-item.active::after { content:none; }
+.brand-mark { width:46px; height:46px; clip-path:none; border-radius:11px; border:1px solid #c4a46a; background:radial-gradient(#5f7753,#243f32); box-shadow:inset 0 0 0 3px #cfb77421,0 3px 7px #10251a40; }
+.brand-mark>.game-icon { width:43px; height:43px; }
+.resource { min-height:43px; padding:0 10px 0 5px; gap:6px; }
+.resource>.game-icon { width:30px; height:30px; }
+.avatar { width:42px; height:42px; padding:2px; background:#394e36; border:1px solid #c4a46a; }
+.avatar>.game-icon { width:35px; height:35px; }
+.button>.game-icon--painted { width:24px; height:24px; }
+.button>.game-icon--utility,.text-button>.game-icon--utility { width:17px; height:17px; }
+.round-button>.game-icon--utility { width:18px; height:18px; }
+.name-button>.game-icon--painted { width:20px; height:20px; }
+.single-player>.game-icon--painted,.world-time>.game-icon--painted { width:24px; height:24px; }
+.chapter-symbol>.game-icon { width:38px; height:38px; }
+.realm-emblem>.game-icon { width:36px; height:36px; }
+.root-tag>.game-icon { width:19px; height:19px; }
+.cultivator-stats .game-icon { width:24px; height:24px; }
+.scene-shortcuts .treasure-art { width:42px; height:42px; background:none; }
+.scene-shortcuts button { min-height:60px; }
+.scene-power .game-icon { width:20px; height:20px; }
+.meditation-icon>.game-icon { width:32px; height:32px; }
+.next-step>.game-icon--painted { width:34px; height:34px; }
+.region-difficulty .game-icon { width:18px; height:18px; }
+.region-rewards .game-icon,.reward-preview .game-icon { width:24px; height:24px; }
+.region-illustration { opacity:1; right:13px; bottom:18px; }
+.region-illustration>.game-icon { width:63px; height:63px; filter:drop-shadow(0 3px 5px #142b2370); }
+.region-modal-art>.game-icon { width:100px; height:100px; opacity:1; }
+.map-node>span { width:58px; height:58px; border-radius:13px; background:radial-gradient(#fff7db,#d4d5ad); box-shadow:0 3px 8px #213d3040,inset 0 0 0 3px #fff4cf77; }
+.map-node>span>.game-icon { width:48px; height:48px; }
+.map-node.locked>span { filter:saturate(.6); }
+.journal-line-icon>.game-icon { width:26px; height:26px; }
+.milestone-icon>.game-icon { width:35px; height:35px; }
+.weapon-stars { display:flex; gap:6px; align-items:center; }
+.weapon-stars>.game-icon { width:22px; height:22px; }
+.material-icon>.game-icon { width:42px; height:42px; }
+.material-icon>.treasure-art { width:42px; height:42px; }
+.pill-icon { border-radius:12px; background:radial-gradient(#fff7d8,#e1dec1); box-shadow:inset 0 0 0 3px #fff4cf55; }
+.pill-icon.foundation .treasure-art,.pill-icon.insight .treasure-art { filter:none; }
+/* Glows from the next row must not enter the recovery/foundation cells. */
+.game-icon[data-icon-sheet="treasures"][data-icon-cell="6"],
+.game-icon[data-icon-sheet="treasures"][data-icon-cell="7"] { clip-path:inset(0 0 8% 0); }
+.assignment-icon>.game-icon { width:52px; height:52px; }
+.upgrade-level>span>.game-icon { width:27px; height:27px; }
+.upgrade-level>span:not(.filled)>.game-icon { filter:saturate(.2); opacity:.55; }
+.sect-seal>.game-icon { width:59px; height:59px; }
+.sect-benefits>div>.game-icon { width:38px; height:38px; }
+.settings-row>span>.game-icon { width:31px; height:31px; }
+.more-nav>.nav-item { gap:13px; min-height:58px; }
+.more-nav>.nav-item>.game-icon--painted { width:37px; height:37px; }
+.offline-symbol>.game-icon { width:66px; height:66px; }
+.offline-rewards .game-icon { width:36px; height:36px; }
+.result-loot .game-icon { width:36px; height:36px; }
+.toast>.game-icon--painted { width:30px; height:30px; }
+.page-footer .game-icon--painted { width:20px; height:20px; }
+.catalog-columns,.catalog-row { grid-template-columns:minmax(230px,1.5fr) 95px 70px minmax(230px,1.8fr); }
+.catalog-symbol { width:64px; height:64px; border:1px solid var(--item-tier); border-left-width:3px; border-radius:9px; background:radial-gradient(ellipse at 40% 20%,#fffaf0,#e4dcc0); box-shadow:inset 0 0 0 3px #fff6df9c,0 2px 5px #302b1c1a; }
+.catalog-symbol>.game-icon { width:57px; height:57px; }
+button:disabled .game-icon--painted { filter:saturate(.35); opacity:.65; }
+@media(max-width:1199px) {
+  .sidebar .nav-item { padding:0 10px; gap:10px; min-height:51px; }
+  .sidebar .nav-item>.game-icon--painted { width:33px; height:33px; }
+  .catalog-columns,.catalog-row { grid-template-columns:minmax(205px,1.5fr) 80px 58px minmax(180px,1.5fr); gap:12px; }
+  .scene-shortcuts button { min-height:52px; }
+  .scene-shortcuts .treasure-art { width:37px; height:37px; }
+}
+@media(max-width:1000px) {
+  .catalog-columns,.catalog-level { display:none; }
+  .catalog-row { grid-template-columns:minmax(0,1fr) auto; }
+  .catalog-stats { grid-column:1/-1; }
+  .catalog-mobile-level { display:inline; }
+}
+@media(max-width:760px) {
+  .brand-mark { width:32px; height:35px; border-radius:8px; }
+  .brand-mark>.game-icon { width:31px; height:31px; }
+  .brand-words strong { font-size:13px; letter-spacing:1.2px; }
+  .brand-words small { font-size:4px; }
+  .topbar { padding-left:13px; padding-right:13px; }
+  .resource { padding:0 6px 0 3px; gap:3px; min-height:39px; min-width:40px; font-size:10px; }
+  .resource>.game-icon { width:23px; height:23px; min-width:20px; min-height:20px; }
+  .resource-pills { gap:4px; }
+  .topbar-right { gap:7px; }
+  .mobile-nav-item { gap:4px; min-height:61px; padding-top:5px; padding-bottom:5px; font-size:10px; }
+  .mobile-nav-item>.game-icon--painted { width:31px; height:31px; padding:1px; border-radius:7px; background:radial-gradient(#fff7da,#d8d6b2); border:1px solid #b6a475; box-shadow:inset 0 0 0 2px #fff7dc99; }
+  .mobile-nav-item>.game-icon--utility { width:25px; height:25px; color:#6a744c; }
+  .mobile-nav-item.active>.game-icon--painted { background:radial-gradient(#f5efc6,#bdcc96); border-color:#88995a; }
+  .scene-shortcuts button { min-height:54px; }
+  .scene-shortcuts .treasure-art { width:38px; height:38px; }
+  .region-rewards .game-icon { width:26px; height:26px; }
+  .region-illustration>.game-icon { width:60px; height:60px; }
+  .map-node>span { width:45px; height:45px; border-radius:10px; }
+  .map-node>span>.game-icon { width:39px; height:39px; }
+  .cultivator-stats .game-icon { width:24px; height:24px; }
+  .realm-emblem>.game-icon { width:29px; height:29px; }
+  .catalog-symbol { width:53px; height:56px; border-radius:8px; }
+  .catalog-symbol>.game-icon { width:47px; height:47px; }
+  .catalog-name { gap:12px; }
+  .catalog-row { gap:13px 9px; }
+}
+@media(max-width:380px) {
+  .brand-words strong { font-size:12px; letter-spacing:.8px; }
+  .brand-mark { width:28px; height:32px; }
+  .brand-mark>.game-icon { width:28px; height:29px; }
+  .resource { font-size:9px; padding-right:4px; }
+  .resource>.game-icon { width:21px; height:21px; }
+}

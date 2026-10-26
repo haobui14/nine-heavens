@@ -1,0 +1,314 @@
+[
+  {
+    "asset": "public/assets/icons-foundations.png",
+    "tool": "Built-in ImageGen",
+    "layout": "4 columns by 4 rows; row-major cell order",
+    "cells": [
+      {
+        "index": 0,
+        "row": 1,
+        "column": 1,
+        "description": "misty jade mountain with a tiny gold-roofed cultivation sanctuary"
+      },
+      {
+        "index": 1,
+        "row": 1,
+        "column": 2,
+        "description": "folded parchment world map with jade route markers"
+      },
+      {
+        "index": 2,
+        "row": 1,
+        "column": 3,
+        "description": "rolled emerald scripture scroll with ivory ribbons"
+      },
+      {
+        "index": 3,
+        "row": 1,
+        "column": 4,
+        "description": "jade and bronze treasure chest with a luminous clasp"
+      },
+      {
+        "index": 4,
+        "row": 2,
+        "column": 1,
+        "description": "miniature jade pagoda spirit abode"
+      },
+      {
+        "index": 5,
+        "row": 2,
+        "column": 2,
+        "description": "round antique bronze alchemy furnace with a glowing amber core"
+      },
+      {
+        "index": 6,
+        "row": 2,
+        "column": 3,
+        "description": "azure silk sect banner on an ornate bronze pole"
+      },
+      {
+        "index": 7,
+        "row": 2,
+        "column": 4,
+        "description": "closed ivory-and-jade journey journal with a calligraphy brush"
+      },
+      {
+        "index": 8,
+        "row": 3,
+        "column": 1,
+        "description": "carved bronze cogwheel with an inset jade gemstone"
+      },
+      {
+        "index": 9,
+        "row": 3,
+        "column": 2,
+        "description": "round polished jade yin-yang Dao medallion"
+      },
+      {
+        "index": 10,
+        "row": 3,
+        "column": 3,
+        "description": "cluster of faceted green spirit-stone crystals"
+      },
+      {
+        "index": 11,
+        "row": 3,
+        "column": 4,
+        "description": "lush spirit-herb sprig with lingzhi mushroom and fresh leaves"
+      },
+      {
+        "index": 12,
+        "row": 4,
+        "column": 1,
+        "description": "chunk of blue-black cloud iron with silver mineral veins"
+      },
+      {
+        "index": 13,
+        "row": 4,
+        "column": 2,
+        "description": "swirling luminous jade Qi energy around a small pearl"
+      },
+      {
+        "index": 14,
+        "row": 4,
+        "column": 3,
+        "description": "carved red carnelian vitality heart with gold filigree"
+      },
+      {
+        "index": 15,
+        "row": 4,
+        "column": 4,
+        "description": "two crossed jade-steel swords with bronze guards"
+      }
+    ],
+    "prompt": "Use case: stylized-concept. Asset type: a production sprite sheet of 16 original hand-painted fantasy RPG UI icons for Nine Heavens, an offline Chinese cultivation game. STRICT composition: a square transparent canvas split into exactly 4 columns and 4 rows of equally sized invisible cells. Each cell contains one isolated object centered precisely in its cell. Row-major order is mandatory. The cell centers are at 12.5%, 37.5%, 62.5%, 87.5% on each axis. Each object fits entirely within the central 72% of its cell; leave clear transparent padding, no object crossing cells. All icons have a consistent premium 2.5D painted game-asset style: solid readable silhouettes, rich deep jade, antique bronze and warm gold, ivory silk, polished stone, subtle engraved detail, soft directional lighting from upper left, bright fine edge highlights, restrained self-shadowing. They must read as material objects, not flat outline symbols. Use strong light/dark separation so they remain recognizable at 32 pixels. No circular badge, square frame, border, drop-shadow panel or background behind any icon. No text, no numbers, no letters, no watermark, no grid lines. Do not blend neighboring icons. Exact cell contents, read left to right on each row:\nRow 1, column 1: misty jade mountain with a tiny gold-roofed cultivation sanctuary.\nRow 1, column 2: folded parchment world map with jade route markers.\nRow 1, column 3: rolled emerald scripture scroll with ivory ribbons.\nRow 1, column 4: jade and bronze treasure chest with a luminous clasp.\nRow 2, column 1: miniature jade pagoda spirit abode.\nRow 2, column 2: round antique bronze alchemy furnace with a glowing amber core.\nRow 2, column 3: azure silk sect banner on an ornate bronze pole.\nRow 2, column 4: closed ivory-and-jade journey journal with a calligraphy brush.\nRow 3, column 1: carved bronze cogwheel with an inset jade gemstone.\nRow 3, column 2: round polished jade yin-yang Dao medallion.\nRow 3, column 3: cluster of faceted green spirit-stone crystals.\nRow 3, column 4: lush spirit-herb sprig with lingzhi mushroom and fresh leaves.\nRow 4, column 1: chunk of blue-black cloud iron with silver mineral veins.\nRow 4, column 2: swirling luminous jade Qi energy around a small pearl.\nRow 4, column 3: carved red carnelian vitality heart with gold filigree.\nRow 4, column 4: two crossed jade-steel swords with bronze guards."
+  },
+  {
+    "asset": "public/assets/icons-treasures.png",
+    "tool": "Built-in ImageGen",
+    "layout": "4 columns by 4 rows; row-major cell order",
+    "cells": [
+      {
+        "index": 0,
+        "row": 1,
+        "column": 1,
+        "description": "elegant straight jade-steel cultivator sword with gold guard"
+      },
+      {
+        "index": 1,
+        "row": 1,
+        "column": 2,
+        "description": "folded ivory and sage-green silk robe with bronze embroidery"
+      },
+      {
+        "index": 2,
+        "row": 1,
+        "column": 3,
+        "description": "ornate gold-and-jade cultivator diadem crown"
+      },
+      {
+        "index": 3,
+        "row": 1,
+        "column": 4,
+        "description": "thick jade ring with a gold dragon setting"
+      },
+      {
+        "index": 4,
+        "row": 2,
+        "column": 1,
+        "description": "ivory paper talisman with an abstract vermilion magical seal, no readable writing"
+      },
+      {
+        "index": 5,
+        "row": 2,
+        "column": 2,
+        "description": "small green jade pill bottle with a gold stopper"
+      },
+      {
+        "index": 6,
+        "row": 2,
+        "column": 3,
+        "description": "single crimson recovery pill resting on a tiny bronze dish"
+      },
+      {
+        "index": 7,
+        "row": 2,
+        "column": 4,
+        "description": "single glowing golden foundation pill resting on a tiny jade dish"
+      },
+      {
+        "index": 8,
+        "row": 3,
+        "column": 1,
+        "description": "circular jade formation disk with carved bronze channels"
+      },
+      {
+        "index": 9,
+        "row": 3,
+        "column": 2,
+        "description": "luminous emerald lotus flower and jade leaves"
+      },
+      {
+        "index": 10,
+        "row": 3,
+        "column": 3,
+        "description": "scarlet phoenix-shaped flame coiled around a golden ember"
+      },
+      {
+        "index": 11,
+        "row": 3,
+        "column": 4,
+        "description": "curling azure water-dragon made from luminous waves"
+      },
+      {
+        "index": 12,
+        "row": 4,
+        "column": 1,
+        "description": "golden mountain-shaped spiritual seal on an engraved bronze base"
+      },
+      {
+        "index": 13,
+        "row": 4,
+        "column": 2,
+        "description": "purple thunder crystal relic with a visible bright lightning spark"
+      },
+      {
+        "index": 14,
+        "row": 4,
+        "column": 3,
+        "description": "white three-tailed cloud fox head and curled jade-tipped tails, spirit-beast emblem"
+      },
+      {
+        "index": 15,
+        "row": 4,
+        "column": 4,
+        "description": "pearl-white cultivation insight pill in a small blue jade bowl"
+      }
+    ],
+    "prompt": "Use case: stylized-concept. Asset type: a production sprite sheet of 16 original hand-painted fantasy RPG UI icons for Nine Heavens, an offline Chinese cultivation game. STRICT composition: a square transparent canvas split into exactly 4 columns and 4 rows of equally sized invisible cells. Each cell contains one isolated object centered precisely in its cell. Row-major order is mandatory. The cell centers are at 12.5%, 37.5%, 62.5%, 87.5% on each axis. Each object fits entirely within the central 72% of its cell; leave clear transparent padding, no object crossing cells. All icons have a consistent premium 2.5D painted game-asset style: solid readable silhouettes, rich deep jade, antique bronze and warm gold, ivory silk, polished stone, subtle engraved detail, soft directional lighting from upper left, bright fine edge highlights, restrained self-shadowing. They must read as material objects, not flat outline symbols. Use strong light/dark separation so they remain recognizable at 32 pixels. No circular badge, square frame, border, drop-shadow panel or background behind any icon. No text, no numbers, no letters, no watermark, no grid lines. Do not blend neighboring icons. Exact cell contents, read left to right on each row:\nRow 1, column 1: elegant straight jade-steel cultivator sword with gold guard.\nRow 1, column 2: folded ivory and sage-green silk robe with bronze embroidery.\nRow 1, column 3: ornate gold-and-jade cultivator diadem crown.\nRow 1, column 4: thick jade ring with a gold dragon setting.\nRow 2, column 1: ivory paper talisman with an abstract vermilion magical seal, no readable writing.\nRow 2, column 2: small green jade pill bottle with a gold stopper.\nRow 2, column 3: single crimson recovery pill resting on a tiny bronze dish.\nRow 2, column 4: single glowing golden foundation pill resting on a tiny jade dish.\nRow 3, column 1: circular jade formation disk with carved bronze channels.\nRow 3, column 2: luminous emerald lotus flower and jade leaves.\nRow 3, column 3: scarlet phoenix-shaped flame coiled around a golden ember.\nRow 3, column 4: curling azure water-dragon made from luminous waves.\nRow 4, column 1: golden mountain-shaped spiritual seal on an engraved bronze base.\nRow 4, column 2: purple thunder crystal relic with a visible bright lightning spark.\nRow 4, column 3: white three-tailed cloud fox head and curled jade-tipped tails, spirit-beast emblem.\nRow 4, column 4: pearl-white cultivation insight pill in a small blue jade bowl."
+  },
+  {
+    "asset": "public/assets/icons-activities.png",
+    "tool": "Built-in ImageGen",
+    "layout": "4 columns by 4 rows; row-major cell order",
+    "cells": [
+      {
+        "index": 0,
+        "row": 1,
+        "column": 1,
+        "description": "cluster of rich green bamboo stalks and curled leaves"
+      },
+      {
+        "index": 1,
+        "row": 1,
+        "column": 2,
+        "description": "crimson sacred mountain peak with a bronze glow"
+      },
+      {
+        "index": 2,
+        "row": 1,
+        "column": 3,
+        "description": "crescent moon above a small blue stone ruin gate"
+      },
+      {
+        "index": 3,
+        "row": 1,
+        "column": 4,
+        "description": "heavy jade shield with bronze rim and a raised gold mountain emblem"
+      },
+      {
+        "index": 4,
+        "row": 2,
+        "column": 1,
+        "description": "ancient luminous golden heavenly gate with a jade core"
+      },
+      {
+        "index": 5,
+        "row": 2,
+        "column": 2,
+        "description": "tied red-and-ivory silk treasure pouch with a gold clasp"
+      },
+      {
+        "index": 6,
+        "row": 2,
+        "column": 3,
+        "description": "bronze refining hammer striking a small engraved anvil"
+      },
+      {
+        "index": 7,
+        "row": 2,
+        "column": 4,
+        "description": "antique mining pickaxe crossed over a blue mineral cluster"
+      },
+      {
+        "index": 8,
+        "row": 3,
+        "column": 1,
+        "description": "bronze incense brazier with a jade Qi wisp"
+      },
+      {
+        "index": 9,
+        "row": 3,
+        "column": 2,
+        "description": "ornate jade friendship knot with two red silk cords"
+      },
+      {
+        "index": 10,
+        "row": 3,
+        "column": 3,
+        "description": "pair of small golden temple bells on a jade ribbon"
+      },
+      {
+        "index": 11,
+        "row": 3,
+        "column": 4,
+        "description": "ivory calligraphy feather-brush with a bronze handle"
+      },
+      {
+        "index": 12,
+        "row": 4,
+        "column": 1,
+        "description": "round jade-and-bronze compass with a red needle"
+      },
+      {
+        "index": 13,
+        "row": 4,
+        "column": 2,
+        "description": "small ornate bronze hourglass with luminous jade sand"
+      },
+      {
+        "index": 14,
+        "row": 4,
+        "column": 3,
+        "description": "heavy carved bronze padlock with a jade inset"
+      },
+      {
+        "index": 15,
+        "row": 4,
+        "column": 4,
+        "description": "radiant golden star-shaped breakthrough spark with a jade pearl center"
+      }
+    ],
+    "prompt": "Use case: stylized-concept. Asset type: a production sprite sheet of 16 original hand-painted fantasy RPG UI icons for Nine Heavens, an offline Chinese cultivation game. STRICT composition: a square transparent canvas split into exactly 4 columns and 4 rows of equally sized invisible cells. Each cell contains one isolated object centered precisely in its cell. Row-major order is mandatory. The cell centers are at 12.5%, 37.5%, 62.5%, 87.5% on each axis. Each object fits entirely within the central 72% of its cell; leave clear transparent padding, no object crossing cells. All icons have a consistent premium 2.5D painted game-asset style: solid readable silhouettes, rich deep jade, antique bronze and warm gold, ivory silk, polished stone, subtle engraved detail, soft directional lighting from upper left, bright fine edge highlights, restrained self-shadowing. They must read as material objects, not flat outline symbols. Use strong light/dark separation so they remain recognizable at 32 pixels. No circular badge, square frame, border, drop-shadow panel or background behind any icon. No text, no numbers, no letters, no watermark, no grid lines. Do not blend neighboring icons. Exact cell contents, read left to right on each row:\nRow 1, column 1: cluster of rich green bamboo stalks and curled leaves.\nRow 1, column 2: crimson sacred mountain peak with a bronze glow.\nRow 1, column 3: crescent moon above a small blue stone ruin gate.\nRow 1, column 4: heavy jade shield with bronze rim and a raised gold mountain emblem.\nRow 2, column 1: ancient luminous golden heavenly gate with a jade core.\nRow 2, column 2: tied red-and-ivory silk treasure pouch with a gold clasp.\nRow 2, column 3: bronze refining hammer striking a small engraved anvil.\nRow 2, column 4: antique mining pickaxe crossed over a blue mineral cluster.\nRow 3, column 1: bronze incense brazier with a jade Qi wisp.\nRow 3, column 2: ornate jade friendship knot with two red silk cords.\nRow 3, column 3: pair of small golden temple bells on a jade ribbon.\nRow 3, column 4: ivory calligraphy feather-brush with a bronze handle.\nRow 4, column 1: round jade-and-bronze compass with a red needle.\nRow 4, column 2: small ornate bronze hourglass with luminous jade sand.\nRow 4, column 3: heavy carved bronze padlock with a jade inset.\nRow 4, column 4: radiant golden star-shaped breakthrough spark with a jade pearl center."
+  }
+]

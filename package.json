@@ -1,11 +1,12 @@
 {
   "name": "nine-heavens",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite --host 127.0.0.1 --port 5178 --strictPort",
-    "build": "tsc --noEmit && vite build && node scripts/build-sw.mjs",
+    "build": "node scripts/audit-icons.mjs && tsc --noEmit && vite build && node scripts/build-sw.mjs",
+    "check:icons": "node scripts/audit-icons.mjs",
     "preview": "vite preview --host 127.0.0.1 --port 5178 --strictPort",
     "test": "vitest run",
     "mobile:sync": "npm run build && cap sync",
@@ -15,12 +16,11 @@
   "dependencies": {
     "@capacitor/core": "^8.0.0",
     "@capacitor/preferences": "^8.0.0",
-    "phaser": "^3.90.0",
-    "lucide": "^0.468.0"
+    "phaser": "^3.90.0"
   },
   "devDependencies": {
-    "@capacitor/cli": "^8.0.0",
     "@capacitor/android": "^8.0.0",
+    "@capacitor/cli": "^8.0.0",
     "@capacitor/ios": "^8.0.0",
     "typescript": "~5.9.3",
     "vite": "^7.2.0",

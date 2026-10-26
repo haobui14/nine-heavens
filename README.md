@@ -10,6 +10,8 @@ The first playable chapter is **First Light**. Cultivate at Jade Peak, explore t
 
 **v0.2.2** adds a searchable **Inventory → Item catalog** with 49 definitions across Common, Uncommon, Rare, Epic, Legendary and Immortal tiers, covering item levels 1–60. Filter by tier, category and current/planned availability, or download the CSV. Five entries represent existing chapter items; 44 define future loot. Catalog levels and planned bonuses do not add new equipment, drop or combat rules.
 
+**v0.3 — Relics of the Dao** replaces the outline icon library and original treasure atlas with 48 original painted icons, purpose-built filled utility glyphs, larger navigation/resource symbols, distinct gear and pill artwork, and tier-framed catalog icons. Icon coverage is audited as part of every production build. The existing save format and gameplay rules are retained.
+
 ## Run
 
 Requires Node.js 22.12+ (tested locally with Node 24).
@@ -82,6 +84,8 @@ While playing, the game saves periodically and after successful actions, includi
 | `src/scene-rpg.ts` | Illustrated Phaser actors, particles, elemental impacts and damage feedback |
 | `src/presentation.ts` | Game screens and illustrated cards |
 | `src/art.ts` | Local treasure and spirit-beast atlas mappings |
+| `src/icons.ts`, `src/icons.css` | Original painted atlas renderer, utility glyphs and responsive icon sizing |
+| `scripts/audit-icons.mjs` | Checks used icon names, renderer replacement and required icon assets |
 | `src/main.ts` | Responsive UI, input, navigation, lifecycle and accessibility |
 | `src/style.css`, `src/touch.css`, `src/rpg.css` | Base layout, touch targets and the v0.2 visual system |
 | `src/readability.css` | Opaque scene-label surfaces and readable profile typography |

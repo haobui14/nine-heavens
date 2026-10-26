@@ -1,5 +1,16 @@
 # Build verification
 
+## v0.3 — Complete icon replacement
+
+- Replaced the outline icon library and original treasure icon sheet with 48 original painted cells and custom filled utility glyphs. The build audits all statically used icon names, required PNG sheets, and absence of the legacy renderer.
+- Navigation, resources, techniques, equipment, pills, item catalog, actions, statuses, dialogs, map nodes and reward surfaces use the central renderer. Healing, cultivation and breakthrough pills have separate art.
+- Icon frames and display sizes are enlarged where the old symbols were too small; labels and existing touch targets remain in place.
+- All icon assets are bundled for offline caching. Gameplay and the save schema are unchanged.
+- All 25 game/save tests and the strict TypeScript/Vite production build pass. The icon audit covers 77 used semantic names, 94 registered names and all 48 painted cells, with no legacy renderer.
+- Inspected all seven main screens at desktop size, plus the phone sanctuary, filtered equipment catalog, expedition rewards and settings dialog. No missing-icon fallback or legacy icon nodes were found. Phone document width equals the viewport content width.
+- Verified Settings & saves remains reachable through the scrolling sidebar at 1024 × 768. Browser console checks returned no warnings or errors during the final preview flow.
+- Save & update activated the new offline worker while preserving the local test journey; the cache includes 17 runtime assets. Android web assets were synchronized with Capacitor after the final build.
+
 ## v0.2.2 — Item catalog
 
 - Defined 49 unique items across six tiers, item levels 1–60, with valid tier-level ranges and positive numeric stats/effects.

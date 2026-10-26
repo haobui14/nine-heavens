@@ -1,3 +1,4 @@
+import { gameIcon as icon } from './icons';
 import catalog from './game/item-catalog.json';
 
 export const ITEMS = catalog.items;
@@ -5,15 +6,14 @@ export const ITEM_TIERS = catalog.tiers;
 export type CatalogFilters = { query: string; tier: string; category: string; availability: string };
 export const emptyCatalogFilters = (): CatalogFilters => ({ query: '', tier: 'all', category: 'all', availability: 'all' });
 const escape = (value: unknown) => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
-const icon = (name: string) => `<i data-lucide="${name}" aria-hidden="true"></i>`;
 const statLabels: Record<string, string> = {
   attack: 'Attack', vitality: 'Vitality', defense: 'Defense', critChance: 'Crit chance',
   cultivationRate: 'Cultivation rate', healthRestore: 'HP restored', qiGain: 'Qi granted',
   materialGrade: 'Material grade', trialAccess: 'Tribulation opened',
 };
 const slotIcons: Record<string, string> = {
-  Sword: 'sword', Robe: 'shirt', Crown: 'crown', Ring: 'circle-dot', Talisman: 'scroll-text',
-  'Healing pill': 'droplets', 'Cultivation pill': 'sparkles', 'Breakthrough pill': 'orbit', Ore: 'gem',
+  Sword: 'sword', Robe: 'shirt', Crown: 'crown', Ring: 'ring', Talisman: 'talisman',
+  'Healing pill': 'droplets', 'Cultivation pill': 'insight', 'Breakthrough pill': 'foundation', Ore: 'ore',
 };
 export function itemStats(item: typeof ITEMS[number]) {
   return Object.entries(item.stats).filter(([, value]) => typeof value === 'number').map(([key, value]) => {

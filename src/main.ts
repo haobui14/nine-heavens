@@ -3,10 +3,11 @@ import './touch.css';
 import './rpg.css';
 import './readability.css';
 import './item-catalog.css';
+import './icons.css';
 import { renderItemCatalog, renderCatalogResults, emptyCatalogFilters } from './item-catalog';
 import { renderSanctuary, renderRegionCard, renderTechniques, renderInventory, renderAbode, renderAlchemy, renderBattle } from './presentation';
 import { treasure } from './art';
-import { createIcons, icons } from 'lucide';
+import { gameIcon as icon } from './icons';
 import { Capacitor } from '@capacitor/core';
 import { REALMS, STAGES, SKILLS, RECIPES, REGIONS, type Activity } from './game/content';
 import { advance, act, qiCap, qiRate, power, attack, health, weaponCost, abodeCost, type GameState, type Action, type OfflineReport } from './game/engine';
@@ -27,7 +28,6 @@ let lastSave = 0;
 let toastTimer: ReturnType<typeof setTimeout>;
 const app = document.querySelector<HTMLDivElement>('#app')!;
 const escape = (v: unknown) => String(v).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
-const icon = (name: string, cls = '') => `<i data-lucide="${name}"${cls ? ` class="${cls}"` : ''} aria-hidden="true"></i>`;
 const fmt = (n: number) => Math.floor(n).toLocaleString('en-US');
 const percent = (n: number, max: number) => Math.min(100, Math.max(0, n / max * 100));
 const disabled = (condition: boolean) => condition ? 'disabled' : '';
@@ -40,7 +40,7 @@ const nav = [
   { id: 'alchemy', name: 'Alchemy', icon: 'flask-conical', subtitle: 'A patient flame' },
   { id: 'sect', name: 'Sect', icon: 'flag', subtitle: 'A path walked together' },
 ] as const;
-const brand = `<span class="brand-mark">${icon('mountain')}</span><span class="brand-words"><strong>NINE HEAVENS</strong><small>A CULTIVATOR’S JOURNEY</small></span>`;
+const brand = `<span class="brand-mark">${icon('sanctuary')}</span><span class="brand-words"><strong>NINE HEAVENS</strong><small>A CULTIVATOR’S JOURNEY</small></span>`;
 function navButton(item: typeof nav[number], mobile = false) {
   return `<button class="nav-item ${page === item.id ? 'active' : ''} ${mobile ? 'mobile-nav-item' : ''}" data-page="${item.id}" ${page === item.id ? 'aria-current="page"' : ''}>${icon(item.icon)}<span>${item.name}</span>${!mobile && page === item.id ? '<span class="nav-dot"></span>' : ''}</button>`;
 }
@@ -59,7 +59,7 @@ function render() {
       <div class="sidebar-group"><span class="eyebrow">THE INNER WORLD</span>${nav.slice(4).map(n => navButton(n)).join('')}</div>
       <div class="sidebar-bottom"><div class="chapter-note"><span class="chapter-symbol">${icon('mountain-snow')}</span><span>CHAPTER ONE<strong>Where clouds begin</strong></span></div>
       <button class="nav-item" data-modal="journal">${icon('book-open')}<span>Journey journal</span><span class="journal-count">${state.journal.length}</span></button>
-      <button class="nav-item" data-modal="settings">${icon('settings-2')}<span>Settings & saves</span></button><div class="build-note">NINE HEAVENS <span>v0.2.2 · Spirit awakening</span></div></div>
+      <button class="nav-item" data-modal="settings">${icon('settings-2')}<span>Settings & saves</span></button><div class="build-note">NINE HEAVENS <span>v0.3 · Relics of the Dao</span></div></div>
     </aside>
     <main class="main"><div class="page-heading"><div><div class="breadcrumb">YOUR JOURNEY <span>/</span> ${nav.find(n => n.id === page)!.name.toUpperCase()}</div><h1>${page === 'sanctuary' ? 'The path to immortality' : nav.find(n => n.id === page)!.subtitle}</h1><p>${pageDescription()}</p></div><div class="world-time">${icon('sun')}<span>YEAR 1 <b>·</b> EARLY SPRING<small>Day ${state.campaignDay} · Jade Peak</small></span></div></div>
     ${pageContent()}
@@ -71,7 +71,7 @@ function render() {
   if (host && oldHost) { host.replaceWith(oldHost); host = oldHost; }
   else if (host) disposeScene = mountScene(host, () => state);
   else { disposeScene?.(); disposeScene = undefined; }
-  createIcons({ icons, attrs: { 'stroke-width': 1.65 } }); updateDynamic();
+   updateDynamic();
 }
 function pageDescription() {
   return ({ sanctuary: 'A thousand realms await. Begin with a single breath.', world: 'Every mountain hides a story. Every journey changes you.', techniques: 'The strongest path is the one you make your own.', inventory: 'A weathered sword today. A legend in the making.', abode: 'Even an immortal needs somewhere to call home.', alchemy: 'Gather the gifts of the earth. Refine them with intention.', sect: 'Among the clouds, a thousand paths become one.' })[page];
@@ -116,7 +116,7 @@ function updateDynamic() {
 }
 function toast(message: string, error = false) {
   document.getElementById('toast')?.remove(); clearTimeout(toastTimer);
-  const el = document.createElement('div'); el.id = 'toast'; el.className = `toast ${error ? 'error' : ''}`; el.setAttribute('role', 'status'); el.innerHTML = `${icon(error ? 'circle-alert' : 'sparkles')}<span>${escape(message)}</span><button aria-label="Dismiss notification">${icon('x')}</button>`; el.querySelector('button')!.onclick = () => el.remove(); document.body.appendChild(el); createIcons({ icons, attrs: { 'stroke-width': 1.65 } }); toastTimer = setTimeout(() => el.remove(), 5500);
+  const el = document.createElement('div'); el.id = 'toast'; el.className = `toast ${error ? 'error' : ''}`; el.setAttribute('role', 'status'); el.innerHTML = `${icon(error ? 'circle-alert' : 'sparkles')}<span>${escape(message)}</span><button aria-label="Dismiss notification">${icon('x')}</button>`; el.querySelector('button')!.onclick = () => el.remove(); document.body.appendChild(el);  toastTimer = setTimeout(() => el.remove(), 5500);
 }
 async function persist() {
   try { await saveGame(state); saveStatus = 'Journey saved on this device'; }
@@ -149,7 +149,7 @@ function modal(title: string, body: string, className = '') {
   d.innerHTML = `<div class="dialog-heading"><h2>${title}</h2><button class="round-button" data-close aria-label="Close dialog">${icon('x')}</button></div>${body}`;
   document.body.appendChild(d); d.querySelector('[data-close]')!.addEventListener('click', () => d.close());
   d.addEventListener('click', e => { if (e.target === d) { const rect = d.getBoundingClientRect(); const mouse = e as MouseEvent; if (mouse.clientX < rect.left || mouse.clientX > rect.right || mouse.clientY < rect.top || mouse.clientY > rect.bottom) d.close(); } });
-  d.addEventListener('close', () => d.remove()); createIcons({ icons, attrs: { 'stroke-width': 1.65 } }); d.showModal(); return d;
+  d.addEventListener('close', () => d.remove());  d.showModal(); return d;
 }
 function regionModal(id: string) {
   const r = REGIONS.find(r => r.id === id)!; const locked = state.realm < r.realm;
@@ -163,7 +163,7 @@ function showOffline(report: OfflineReport) {
   d.querySelector('#continue-journey')!.addEventListener('click', () => d.close());
 }
 function openSettings() {
-  const d = modal('A little peace of mind', `<p class="dialog-intro">Your journey belongs to you. Keep a copy somewhere safe.</p><div class="settings-row"><span>${icon('volume-2')}<span><strong>Gentle sound effects</strong><small>Plucked notes for actions and breakthroughs</small></span></span><button class="switch ${state.settings.sound ? 'on' : ''}" role="switch" aria-label="Sound effects" aria-checked="${state.settings.sound}" data-pref="sound"><span></span></button></div><div class="settings-row"><span>${icon('wind')}<span><strong>Reduced motion</strong><small>Still the particles and soften transitions</small></span></span><button class="switch ${state.settings.reducedMotion ? 'on' : ''}" role="switch" aria-label="Reduced motion" aria-checked="${state.settings.reducedMotion}" data-pref="reducedMotion"><span></span></button></div><div class="save-tools"><button class="button secondary" id="export-save">${icon('download')} Export save</button><button class="button secondary" id="import-save">${icon('upload')} Import save</button></div><input id="save-file" type="file" accept=".json,application/json" hidden><button class="text-button" id="protect-save">${icon('shield-check')} Request persistent browser storage</button><p class="dialog-footnote">Browser saves are local to this browser and address. Clearing site data can remove them. Export to transfer your journey between PC and mobile.</p><div class="about-build"><strong>NINE HEAVENS</strong><span>v0.2.2 · Spirit awakening</span><p>Built for single-player, offline cultivation. This chapter includes three realms, three regions, six arts, alchemy, a spirit companion, and Azure Cloud membership.</p></div>`);
+  const d = modal('A little peace of mind', `<p class="dialog-intro">Your journey belongs to you. Keep a copy somewhere safe.</p><div class="settings-row"><span>${icon('volume-2')}<span><strong>Gentle sound effects</strong><small>Plucked notes for actions and breakthroughs</small></span></span><button class="switch ${state.settings.sound ? 'on' : ''}" role="switch" aria-label="Sound effects" aria-checked="${state.settings.sound}" data-pref="sound"><span></span></button></div><div class="settings-row"><span>${icon('wind')}<span><strong>Reduced motion</strong><small>Still the particles and soften transitions</small></span></span><button class="switch ${state.settings.reducedMotion ? 'on' : ''}" role="switch" aria-label="Reduced motion" aria-checked="${state.settings.reducedMotion}" data-pref="reducedMotion"><span></span></button></div><div class="save-tools"><button class="button secondary" id="export-save">${icon('download')} Export save</button><button class="button secondary" id="import-save">${icon('upload')} Import save</button></div><input id="save-file" type="file" accept=".json,application/json" hidden><button class="text-button" id="protect-save">${icon('shield-check')} Request persistent browser storage</button><p class="dialog-footnote">Browser saves are local to this browser and address. Clearing site data can remove them. Export to transfer your journey between PC and mobile.</p><div class="about-build"><strong>NINE HEAVENS</strong><span>v0.3 · Relics of the Dao</span><p>Built for single-player, offline cultivation. This chapter includes three realms, three regions, six arts, alchemy, a spirit companion, and Azure Cloud membership.</p></div>`);
   d.querySelectorAll<HTMLButtonElement>('[data-pref]').forEach(button => button.onclick = () => {
     const key = button.dataset.pref as 'sound' | 'reducedMotion'; dispatch({ type: 'setting', key, value: !state.settings[key] }, true); button.classList.toggle('on', state.settings[key]); button.setAttribute('aria-checked', String(state.settings[key]));
   });
@@ -221,7 +221,7 @@ function refreshCatalog() {
   const results = document.getElementById('catalog-results');
   if (!results) return;
   results.innerHTML = renderCatalogResults(catalogFilters);
-  createIcons({ icons, attrs: { 'stroke-width': 1.65 } });
+  
 }
 document.addEventListener('input', e => {
   const input = e.target as HTMLInputElement;
@@ -239,19 +239,19 @@ document.addEventListener('change', e => {
 document.addEventListener('keydown', e => { if (!state || document.querySelector('dialog[open]') || ['INPUT', 'TEXTAREA', 'SELECT'].includes((e.target as Element).tagName) || e.ctrlKey || e.metaKey || e.altKey) return; if (e.key.toLowerCase() === 'f' && page === 'sanctuary' && !state.battle) { e.preventDefault(); dispatch({ type: 'focus' }, true); } });
 
 async function boot() {
-  app.innerHTML = `<div class="boot-screen"><div class="brand">${brand}</div><p>The mountain is waking…</p><span class="loading-line"></span></div>`; createIcons({ icons });
+  app.innerHTML = `<div class="boot-screen"><div class="brand">${brand}</div><p>The mountain is waking…</p><span class="loading-line"></span></div>`; 
   if ('locks' in navigator) {
     const acquired = await new Promise<boolean>(resolve => {
       void navigator.locks.request('nine-heavens-active-journey', { ifAvailable: true }, lock => {
         resolve(!!lock); return lock ? new Promise<void>(() => {}) : Promise.resolve();
       });
     });
-    if (!acquired) { app.innerHTML = `<div class="boot-screen"><div class="brand">${brand}</div><h1>Your journey is open in another tab.</h1><p>Close the other Nine Heavens tab to keep one consistent save.</p><button class="button primary" id="retry-lock">Continue here</button></div>`; document.getElementById('retry-lock')!.onclick = () => location.reload(); createIcons({ icons }); return; }
+    if (!acquired) { app.innerHTML = `<div class="boot-screen"><div class="brand">${brand}</div><h1>Your journey is open in another tab.</h1><p>Close the other Nine Heavens tab to keep one consistent save.</p><button class="button primary" id="retry-lock">Continue here</button></div>`; document.getElementById('retry-lock')!.onclick = () => location.reload();  return; }
   }
   try {
     const loaded = await loadGame(); state = loaded.state; const report = advance(state, Date.now()); render(); await persist(); if (loaded.message) toast(loaded.message); showOffline(report);
   } catch (error) {
-    app.innerHTML = `<div class="boot-screen"><div class="brand">${brand}</div><h1>Your journey is safe to recover.</h1><p>${escape(error instanceof Error ? error.message : 'The save could not be opened.')}</p><label class="button primary" for="recover-file">Restore an exported save</label><input id="recover-file" type="file" accept=".json" hidden></div>`; createIcons({ icons });
+    app.innerHTML = `<div class="boot-screen"><div class="brand">${brand}</div><h1>Your journey is safe to recover.</h1><p>${escape(error instanceof Error ? error.message : 'The save could not be opened.')}</p><label class="button primary" for="recover-file">Restore an exported save</label><input id="recover-file" type="file" accept=".json" hidden></div>`; 
     document.querySelector<HTMLInputElement>('#recover-file')!.onchange = async e => { const file = (e.target as HTMLInputElement).files?.[0]; if (!file) return; try { state = importSave(await file.text()); await saveGame(state); location.reload(); } catch (err) { toast(String(err), true); } }; return;
   }
   setInterval(() => {
@@ -288,6 +288,6 @@ function offerUpdate(registration: ServiceWorkerRegistration) {
       waiting.postMessage('ACTIVATE_UPDATE');
     } catch { toast('Your save could not be stored. Export it before updating.', true); }
   });
-  document.body.appendChild(banner); createIcons({ icons, attrs: { 'stroke-width': 1.65 } });
+  document.body.appendChild(banner); 
 }
 void boot();

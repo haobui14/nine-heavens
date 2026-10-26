@@ -2,7 +2,7 @@
 
 **Direction:** painted mountain fantasy with warm parchment interfaces, ink-blue distance, muted jade actions and copper accents. Quiet sophistication at the sanctuary; clear silhouettes and stronger elemental feedback in combat.
 
-The interface uses system sans-serif for small controls and Georgia for expressive titles. No runtime font download is required. Icons are from the Lucide package (ISC license). Original painted art is generated with the built-in ImageGen tool. Phaser animates the illustrated actors and renders particles, sword arcs, elemental impacts, and damage text.
+The interface uses system sans-serif for small controls and Georgia for expressive titles. No runtime font download is required. As of v0.3, original painted icons and purpose-built utility glyphs replace the Lucide icon package. Original painted art is generated with the built-in ImageGen tool. Phaser animates the illustrated actors and renders particles, sword arcs, elemental impacts, and damage text.
 
 Saved generated asset: `public/assets/jade-peak.png`. The exact source image is copied into the project; the game does not reference a tool output directory or a remote image URL. Generation used the built-in tool, not a CLI or a runtime image-generation API.
 
@@ -30,6 +30,12 @@ All six new assets below were generated with the built-in ImageGen tool, visuall
 | `treasures.png` | Transparent 3×3 atlas: six elemental arts, scroll, pill bottle, jade crystal |
 
 The illustrated actors have floating idle motion, attack movement, arrival fades, and effects. They use a single painted pose per actor, rather than skeletal or frame-by-frame character animation. Reduced motion stops scene drift, impacts and camera shake while retaining static damage feedback. All artwork is bundled and cached locally for offline use; the complete original PNG art collection is approximately 20 MB.
+
+## v0.3 — Relics of the Dao
+
+Three original transparent 4×4 sheets provide 48 material-based icons in consistent jade, bronze, gold and ivory. `icons-foundations.png` covers navigation, resources and stats; `icons-treasures.png` covers gear, six elemental arts and distinct pill types; `icons-activities.png` covers regions, crafting, protection, rewards and tools. Exact prompts and cell order are in `icons-v03.json`.
+
+`src/icons.ts` renders the artwork in clipped SVG viewports. Filled, beveled utility glyphs keep small arrows, close buttons, play/pause, checks and menu controls legible. Art, icon frames and touch-target sizes are scaled for desktop and mobile. The original treasure sheet is preserved as `docs/art-archive/treasures-v02.png` and is no longer part of the runtime download. No external images, font service, icon CDN or icon dependency is required.
 
 ## Future asset priorities
 
